@@ -28,7 +28,11 @@ footer a {
 footer a:hover {
     color: #3c8453;
 }
-
+.btn {
+    background: #3c8453;
+    color: #f6f6f6;
+    text-decoration: none;
+}
 /* HOME
 ------------------------------------*/
 .home {
