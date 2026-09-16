@@ -17,7 +17,9 @@ body {
 
 /* HOME
 ------------------------------------*/
-
+.home {
+      background: url(../images/bg-home-office-studio.jpg);
+}
 
 /* RESUME
 ------------------------------------*/
