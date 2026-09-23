@@ -145,6 +145,7 @@ footer {
     background: #222;
     color: #d3d4d6;
     display: flex;
+    justify-content: space-between;
 }
 
 .socials {
