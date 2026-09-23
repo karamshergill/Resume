@@ -8,7 +8,7 @@ Light gray    #d3d4d6
 Off-white     #f6f6f6
 */
 
-/* GLOBAL STYLES 
+/* GLOBAL STYLES
 ------------------------------------*/
 
 /*
@@ -64,8 +64,10 @@ footer a:hover {
     max-width: 900px;
 }
 
+
 /* HOME
 ------------------------------------*/
+
 .home {
     background: url(../images/bg-home-office-studio.jpg) no-repeat center;
     background-size: cover;
@@ -74,11 +76,18 @@ footer a:hover {
 }
 
 .home .content-wrapper {
-    background: rgb(255 255 255 / 0.9);
     flex: 1 0 auto;
 }
+
+.content-bg {
+    background: rgb(255 255 255 / 0.9);
+    padding: 30px;
+}
+
+
 /* RESUME
 ------------------------------------*/
+
 .resume header::before {
     background: url(../images/bg-home-office-studio.jpg) center / cover;
     background-size: cover;
@@ -101,11 +110,13 @@ footer a:hover {
     left: 5px;
 }
 
+
 /* Profile
 ------------------------------------*/
+
 .project-item {
     display: flow-root;
-    margin: 30px, 0;
+    margin: 30px 0;
 }
 
 .project-item img {
@@ -114,11 +125,14 @@ footer a:hover {
     margin-right: 20px;
 }
 
+
 /* Projects
 ------------------------------------*/
 
+
 /* Work Experience
 ------------------------------------*/
+
 
 /* Education
 ------------------------------------*/
@@ -126,10 +140,10 @@ footer a:hover {
 
 /* FOOTER
 ------------------------------------*/
+
 footer {
     background: #222;
     color: #d3d4d6;
-
 }
 
 .socials {
