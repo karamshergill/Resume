@@ -137,8 +137,11 @@ footer a:hover {
     .resume h1 {
         font-size: 5rem;
     }
-}
 
+    .resume h2 {
+        font-size: 2.6rem;
+    }
+}
 .resume-section {
     margin-bottom: 50px;
 }
