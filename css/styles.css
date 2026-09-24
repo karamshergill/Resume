@@ -117,6 +117,11 @@ footer a:hover {
     padding: 30px;
 }
 
+@media screen and (max-width: 500px) {
+    .home .content-wrapper {
+        padding: 10px;
+    }
+}
 
 /* RESUME
 ------------------------------------*/
