@@ -252,6 +252,12 @@ footer {
     justify-content: space-between;
     padding: 0 20px;
 }
+@media screen and (max-width: 860px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
 .socials {
     list-style-type: none;
