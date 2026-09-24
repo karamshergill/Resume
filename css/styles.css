@@ -149,16 +149,23 @@ footer a:hover {
 ------------------------------------*/
 
 .project-item {
-    display: flow-root;
     margin: 30px 0;
 }
 
 .project-item img {
     width: 300px;
-    float: left;
-    margin-right: 20px;
 }
 
+@media screen and (min-width: 860px) {
+    .project-item {
+        display: flow-root;
+    }
+
+    .project-item img {
+        float: left;
+        margin-right: 20px;
+    }
+}
 /* Work Experience
 ------------------------------------*/
 
