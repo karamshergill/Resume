@@ -84,6 +84,9 @@ footer a:hover {
     font-size: 1.2rem;
     display: inline-block;
     padding: 7px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    border-radius: 4px;
 }
 
 .content-wrapper {
