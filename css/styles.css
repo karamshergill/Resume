@@ -244,19 +244,12 @@ footer a:hover {
 
 /* FOOTER
 ------------------------------------*/
-
 footer {
     background: #222;
     color: #d3d4d6;
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-}
-@media screen and (max-width: 860px) {
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
 }
 
 .socials {
@@ -269,6 +262,14 @@ footer {
     margin-left: 10px;
 }
 
+.socials img {
+    width: 32px;
+}
+
+.socials img:hover {
+    opacity: 0.5;
+}
+
 @media screen and (max-width: 860px) {
     footer {
         flex-direction: column;
@@ -278,12 +279,4 @@ footer {
     .socials li {
         margin: 0 5px;
     }
-}
-
-.socials img {
-    width: 32px;
-}
-
-.socials img:hover {
-    opacity: 0.5;
 }
