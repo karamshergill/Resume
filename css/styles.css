@@ -166,6 +166,18 @@ footer a:hover {
         margin-right: 20px;
     }
 }
+
+@media screen and (min-width: 650px) and (max-width: 859px) {
+    .project-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+
+    .project-item img {
+        width: 100%;
+    }
+}
 /* Work Experience
 ------------------------------------*/
 
