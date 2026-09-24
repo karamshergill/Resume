@@ -112,17 +112,15 @@ footer a:hover {
     flex: 1 0 auto;
 }
 
-.content-bg {
-    background: rgb(255 255 255 / 0.9);
-    padding: 30px;
-}
-
 @media screen and (max-width: 500px) {
     .home .content-wrapper {
         padding: 10px;
     }
-}
 
+    .content-bg {
+        padding: 20px;
+    }
+}
 /* RESUME
 ------------------------------------*/
 
