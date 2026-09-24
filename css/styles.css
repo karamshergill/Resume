@@ -269,6 +269,17 @@ footer {
     margin-left: 10px;
 }
 
+@media screen and (max-width: 860px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .socials li {
+        margin: 0 5px;
+    }
+}
+
 .socials img {
     width: 32px;
 }
