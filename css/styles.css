@@ -16,8 +16,10 @@ Off-white     #f6f6f6
 */
 html {
     box-sizing: border-box;
-    font-size: 62.5%; /* setting default to 10px */
+    font-size: 62.5%;
+    /* setting default to 10px */
 }
+
 *,
 *:before,
 *:after {
@@ -181,6 +183,9 @@ footer a:hover {
 /* Education
 ------------------------------------*/
 
+.education-item p {
+    margin: 0;
+}
 
 /* FOOTER
 ------------------------------------*/
