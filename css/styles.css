@@ -199,6 +199,10 @@ footer a:hover {
     margin: 30px 0;
 }
 
+.work-details p {
+    margin: 0;
+}
+
 @media screen and (min-width: 860px) {
     .work-item {
         display: grid;
@@ -210,11 +214,6 @@ footer a:hover {
         margin-top: 0;
     }
 }
-
-.work-details p {
-    margin: 0;
-}
-
 
 /* Education
 ------------------------------------*/
