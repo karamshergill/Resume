@@ -8,11 +8,17 @@ Light gray    #d3d4d6
 Off-white     #f6f6f6
 */
 
+
 /* GLOBAL STYLES
 ------------------------------------*/
 
+:root {
+    --font-body: "Open Sans", sans-serif;
+    --font-heading: "Caveat", cursive;
+}
+
 /*
- https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 */
 html {
     box-sizing: border-box;
@@ -34,7 +40,7 @@ body {
 body {
     background: #f6f6f6;
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: var(--font-body);
     font-size: 1.5rem;
     line-height: 1.4;
 }
@@ -42,7 +48,7 @@ body {
 h1,
 h2,
 h3 {
-    font-family: "Caveat", cursive;
+    font-family: var(--font-heading);
     font-weight: 400;
     margin: 0;
 }
@@ -113,6 +119,7 @@ footer a:hover {
 }
 
 @media screen and (max-width: 500px) {
+
     .home .content-wrapper {
         padding: 10px;
     }
@@ -121,6 +128,7 @@ footer a:hover {
         padding: 20px;
     }
 }
+
 
 /* RESUME
 ------------------------------------*/
@@ -134,6 +142,7 @@ footer a:hover {
 }
 
 @media screen and (max-width: 500px) {
+
     .resume header::before {
         height: 200px;
     }
@@ -163,6 +172,7 @@ footer a:hover {
 }
 
 @media screen and (max-width: 1200px) {
+
     .download-link {
         position: absolute;
     }
@@ -181,6 +191,7 @@ footer a:hover {
 }
 
 @media screen and (min-width: 860px) {
+
     .project-item {
         display: flow-root;
     }
@@ -192,6 +203,7 @@ footer a:hover {
 }
 
 @media screen and (min-width: 650px) and (max-width: 859px) {
+
     .project-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -204,11 +216,13 @@ footer a:hover {
 }
 
 @media screen and (max-width: 500px) {
+
     .project-item img {
         width: 100%;
         margin-bottom: 10px;
     }
 }
+
 
 /* Work Experience
 ------------------------------------*/
@@ -222,6 +236,7 @@ footer a:hover {
 }
 
 @media screen and (min-width: 860px) {
+
     .work-item {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -232,6 +247,7 @@ footer a:hover {
         margin-top: 0;
     }
 }
+
 
 /* Education
 ------------------------------------*/
@@ -244,8 +260,10 @@ footer a:hover {
     margin: 0;
 }
 
+
 /* FOOTER
 ------------------------------------*/
+
 footer {
     background: #222;
     color: #d3d4d6;
@@ -273,6 +291,7 @@ footer {
 }
 
 @media screen and (max-width: 860px) {
+
     footer {
         flex-direction: column;
         text-align: center;
