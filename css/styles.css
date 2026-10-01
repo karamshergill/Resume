@@ -127,15 +127,16 @@ footer a:hover {
 
 .home .content-wrapper {
     flex: 1 0 auto;
+    padding: 10px;
 }
 
-@media screen and (max-width: 500px) {
-    .home .content-wrapper {
-        padding: 10px;
-    }
+.content-bg {
+    padding: 20px;
+}
 
-    .content-bg {
-        padding: 20px;
+@media screen and (min-width: 501px) {
+    .home .content-wrapper {
+        padding: 30px;
     }
 }
 
@@ -148,20 +149,28 @@ footer a:hover {
     background-size: cover;
     content: "";
     display: block;
-    height: 375px;
+    height: 200px;
 }
 
-@media screen and (max-width: 500px) {
+.resume h1 {
+    font-size: 5rem;
+}
+
+.resume h2 {
+    font-size: 2.6rem;
+}
+
+@media screen and (min-width: 501px) {
     .resume header::before {
-        height: 200px;
+        height: 375px;
     }
 
     .resume h1 {
-        font-size: 5rem;
+        font-size: 7rem;
     }
 
     .resume h2 {
-        font-size: 2.6rem;
+        font-size: 3.6rem;
     }
 }
 
@@ -174,15 +183,15 @@ footer a:hover {
 }
 
 .download-link {
-    position: fixed;
+    position: absolute;
     top: 5px;
     left: 5px;
     font-size: 1.5rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1201px) {
     .download-link {
-        position: absolute;
+        position: fixed;
     }
 }
 
@@ -195,17 +204,14 @@ footer a:hover {
 }
 
 .project-item img {
-    width: 300px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-@media screen and (min-width: 860px) {
-    .project-item {
-        display: flow-root;
-    }
-
+@media screen and (min-width: 501px) {
     .project-item img {
-        float: left;
-        margin-right: 20px;
+        width: 300px;
+        margin-bottom: 0;
     }
 }
 
@@ -221,10 +227,14 @@ footer a:hover {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 860px) {
+    .project-item {
+        display: flow-root;
+    }
+
     .project-item img {
-        width: 100%;
-        margin-bottom: 10px;
+        float: left;
+        margin-right: 20px;
     }
 }
 
@@ -272,6 +282,8 @@ footer {
     background: var(--neutral-9);
     color: var(--neutral-3);
     display: flex;
+    flex-direction: column;
+    text-align: center;
     justify-content: space-between;
     padding: 0 20px;
 }
@@ -283,7 +295,7 @@ footer {
 
 .socials li {
     display: inline-block;
-    margin-left: 10px;
+    margin: 0 5px;
 }
 
 .socials img {
@@ -294,13 +306,13 @@ footer {
     opacity: 0.5;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (min-width: 861px) {
     footer {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: initial;
     }
 
     .socials li {
-        margin: 0 5px;
+        margin: 0 0 0 10px;
     }
 }
