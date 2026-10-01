@@ -8,17 +8,31 @@ Light gray    #d3d4d6
 Off-white     #f6f6f6
 */
 
-
 /* GLOBAL STYLES
 ------------------------------------*/
 
 :root {
     --font-body: "Open Sans", sans-serif;
     --font-heading: "Caveat", cursive;
+
+    --neutral: oklch(50% 0.02 150);
+
+    --neutral-1: oklch(from var(--neutral) 98% c h);
+    --neutral-2: oklch(from var(--neutral) 90% c h);
+    --neutral-3: oklch(from var(--neutral) 80% c h);
+    --neutral-4: oklch(from var(--neutral) 70% c h);
+    --neutral-5: oklch(from var(--neutral) 60% c h);
+    --neutral-6: oklch(from var(--neutral) 50% c h);
+    --neutral-7: oklch(from var(--neutral) 40% c h);
+    --neutral-8: oklch(from var(--neutral) 30% c h);
+    --neutral-9: oklch(from var(--neutral) 20% c h);
+
+    --accent-green: oklch(56% 0.11 150);
+    --accent-beige: oklch(75% 0.04 70);
 }
 
 /*
-https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 */
 html {
     box-sizing: border-box;
@@ -119,7 +133,6 @@ footer a:hover {
 }
 
 @media screen and (max-width: 500px) {
-
     .home .content-wrapper {
         padding: 10px;
     }
@@ -142,7 +155,6 @@ footer a:hover {
 }
 
 @media screen and (max-width: 500px) {
-
     .resume header::before {
         height: 200px;
     }
@@ -172,7 +184,6 @@ footer a:hover {
 }
 
 @media screen and (max-width: 1200px) {
-
     .download-link {
         position: absolute;
     }
@@ -191,7 +202,6 @@ footer a:hover {
 }
 
 @media screen and (min-width: 860px) {
-
     .project-item {
         display: flow-root;
     }
@@ -203,7 +213,6 @@ footer a:hover {
 }
 
 @media screen and (min-width: 650px) and (max-width: 859px) {
-
     .project-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -216,7 +225,6 @@ footer a:hover {
 }
 
 @media screen and (max-width: 500px) {
-
     .project-item img {
         width: 100%;
         margin-bottom: 10px;
@@ -236,7 +244,6 @@ footer a:hover {
 }
 
 @media screen and (min-width: 860px) {
-
     .work-item {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -291,7 +298,6 @@ footer {
 }
 
 @media screen and (max-width: 860px) {
-
     footer {
         flex-direction: column;
         text-align: center;
