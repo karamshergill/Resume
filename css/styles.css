@@ -119,7 +119,7 @@ footer a:hover {
 ------------------------------------*/
 
 .home {
-    background: url(../images/bg-home-office-studio.jpg) no-repeat center;
+    background: url(../images/karam.jpg) no-repeat center;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -145,7 +145,7 @@ footer a:hover {
 ------------------------------------*/
 
 .resume header::before {
-    background: url(../images/bg-home-office-studio.jpg) center / cover;
+    background: url(../images/karam.jpg) center / cover;
     background-size: cover;
     content: "";
     display: block;
