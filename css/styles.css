@@ -1,11 +1,7 @@
 /*
 COLOR PALETTE
 
-Dark green    #3c8453
-Sandy beige   #bcaa96
-Dark gray     #222222
-Light gray    #d3d4d6
-Off-white     #f6f6f6
+Neutral shades and accent colours use OKLCH.
 */
 
 /* GLOBAL STYLES
@@ -52,7 +48,8 @@ body {
 }
 
 body {
-    background: #f6f6f6;
+    background: var(--neutral-1);
+    color: var(--neutral-9);
     margin: 0;
     font-family: var(--font-body);
     font-size: 1.5rem;
@@ -82,25 +79,25 @@ h3 {
 
 /* links */
 a {
-    color: #3c8453;
+    color: var(--accent-green);
 }
 
 a:hover {
-    color: #bcaa96;
+    color: var(--accent-beige);
     text-decoration: none;
 }
 
 footer a {
-    color: #bcaa96;
+    color: var(--accent-beige);
 }
 
 footer a:hover {
-    color: #3c8453;
+    color: var(--accent-green);
 }
 
 .btn {
-    background: #3c8453;
-    color: #f6f6f6;
+    background: var(--accent-green);
+    color: var(--neutral-1);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -173,7 +170,7 @@ footer a:hover {
 }
 
 .resume-section h2 {
-    border-bottom: 2px dashed #d3d4d6;
+    border-bottom: 2px dashed var(--neutral-3);
 }
 
 .download-link {
@@ -272,8 +269,8 @@ footer a:hover {
 ------------------------------------*/
 
 footer {
-    background: #222;
-    color: #d3d4d6;
+    background: var(--neutral-9);
+    color: var(--neutral-3);
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
