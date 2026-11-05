@@ -25,6 +25,9 @@
   --button-shadow: 0 0.4rem 0.9rem rgb(0 0 0 / 0.18);
   --nav-transition: 0.3s ease;
   --logo-animation-duration: 1s;
+
+  /* Commit 9 animation variable */
+  --filter-animation-duration: 4s;
 }
 
 html {
@@ -905,15 +908,107 @@ footer a:hover {
 }
 
 /* =========================================
-   STATIC SHAPES FOR FUTURE COMMITS
+   COMMIT 9 - CSS FILTER ANIMATION
 ========================================= */
+
+.animations-page .filter-stage {
+  background:
+    radial-gradient(
+      circle,
+      var(--neutral-1),
+      var(--neutral-2)
+    );
+}
 
 .animations-page .filter-shape {
   inline-size: 55%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: var(--accent-green);
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      var(--accent-beige),
+      var(--accent-green) 55%,
+      var(--neutral-8)
+    );
+
+  box-shadow:
+    0 0 1rem rgb(0 0 0 / 0.12);
+
+  animation:
+    filterPulse
+    var(--filter-animation-duration)
+    ease-in-out
+    infinite
+    alternate;
 }
+
+@keyframes filterPulse {
+  0% {
+    filter:
+      hue-rotate(0deg)
+      blur(0rem)
+      brightness(1)
+      saturate(1);
+
+    transform:
+      scale(0.8)
+      rotate(0deg);
+  }
+
+  25% {
+    filter:
+      hue-rotate(70deg)
+      blur(0.125rem)
+      brightness(1.25)
+      saturate(1.4);
+
+    transform:
+      scale(1)
+      rotate(90deg);
+  }
+
+  50% {
+    filter:
+      hue-rotate(150deg)
+      blur(0.25rem)
+      brightness(1.5)
+      saturate(1.7);
+
+    transform:
+      scale(1.12)
+      rotate(180deg);
+  }
+
+  75% {
+    filter:
+      hue-rotate(240deg)
+      blur(0.125rem)
+      brightness(1.2)
+      saturate(1.5);
+
+    transform:
+      scale(1)
+      rotate(270deg);
+  }
+
+  100% {
+    filter:
+      hue-rotate(360deg)
+      blur(0rem)
+      brightness(1)
+      saturate(1);
+
+    transform:
+      scale(0.8)
+      rotate(360deg);
+  }
+}
+
+/* =========================================
+   STATIC BLEND SHAPES FOR COMMIT 10
+========================================= */
 
 .animations-page .blend-stage {
   position: relative;
@@ -1028,7 +1123,6 @@ footer a:hover {
     padding-inline: 0.9375rem;
   }
 
-  /* Desktop animation grid */
   .animations-page .animation-grid {
     grid-template-columns:
       repeat(3, minmax(0, 1fr));
@@ -1095,12 +1189,20 @@ footer a:hover {
 
   .animations-page .clip-shape {
     animation: none;
+
     clip-path: polygon(
       50% 0%,
       100% 50%,
       50% 100%,
       0% 50%
     );
+
+    transform: none;
+  }
+
+  .animations-page .filter-shape {
+    animation: none;
+    filter: none;
     transform: none;
   }
 }
