@@ -19,6 +19,10 @@
 
   --accent-green: oklch(56% 0.11 150);
   --accent-beige: oklch(75% 0.04 70);
+
+  /* Animation settings */
+  --button-transition: 0.25s ease;
+  --button-shadow: 0 0.4rem 0.9rem rgb(0 0 0 / 0.18);
 }
 
 html {
@@ -75,6 +79,9 @@ a:hover {
   text-decoration: none;
 }
 
+/* BUTTONS
+------------------------------------ */
+
 .btn {
   display: inline-block;
   padding: 0.5rem 0.75rem;
@@ -89,7 +96,33 @@ a:hover {
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+
+  transition:
+    background-color var(--button-transition),
+    color var(--button-transition),
+    transform var(--button-transition),
+    box-shadow var(--button-transition);
 }
+
+.btn:hover {
+  background: var(--neutral-8);
+  color: var(--neutral-1);
+  transform: translateY(-0.1875rem);
+  box-shadow: var(--button-shadow);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn:focus-visible {
+  outline: 0.1875rem solid var(--accent-beige);
+  outline-offset: 0.1875rem;
+}
+
+/* GENERAL LAYOUT
+------------------------------------ */
 
 .content-wrapper {
   inline-size: 100%;
@@ -235,10 +268,14 @@ footer a:hover {
 .socials img {
   inline-size: 2rem;
   block-size: 2rem;
+  transition:
+    opacity var(--button-transition),
+    transform var(--button-transition);
 }
 
 .socials img:hover {
-  opacity: 0.5;
+  opacity: 0.6;
+  transform: translateY(-0.125rem);
 }
 
 /* PROJECTS PAGE - SUBGRID
@@ -467,13 +504,9 @@ footer a:hover {
 #contact-popover {
   box-sizing: border-box;
 
-  /* Teacher's required sizing formula */
   inline-size: min(100vi, max(33vi, 26rem));
-
-  /* Container query support */
   container-type: inline-size;
 
-  /* Horizontal resizing */
   resize: horizontal;
   overflow: auto;
   direction: rtl;
@@ -482,7 +515,6 @@ footer a:hover {
   max-inline-size: 100vi;
   max-block-size: 85vh;
 
-  /* Anchor positioning */
   position: fixed;
   position-anchor: --contact-button;
   position-area: bottom span-left;
@@ -494,8 +526,6 @@ footer a:hover {
   padding: 1.25rem;
   border: 0.125rem solid var(--accent-green);
   border-radius: 0.625rem;
-
-  /* Correct corner for bottom-left resize handle */
   border-end-end-radius: 0;
 
   background: var(--neutral-1);
@@ -508,7 +538,7 @@ footer a:hover {
   background: rgb(0 0 0 / 0.55);
 }
 
-/* CONTACT CARD - SMALL CONTAINER
+/* CONTACT CARD
 ------------------------------------ */
 
 .contact-card {
@@ -565,7 +595,7 @@ footer a:hover {
   color: var(--neutral-8);
 }
 
-/* CONTACT CLOSE BUTTON
+/* CLOSE BUTTON
 ------------------------------------ */
 
 .contact-close {
@@ -580,10 +610,24 @@ footer a:hover {
   padding-inline: 1.25rem;
   cursor: pointer;
   justify-self: start;
+
+  transition:
+    background-color var(--button-transition),
+    color var(--button-transition),
+    transform var(--button-transition),
+    box-shadow var(--button-transition);
 }
 
 .contact-close:hover {
   background: var(--neutral-8);
+  color: var(--neutral-1);
+  transform: translateY(-0.1875rem);
+  box-shadow: var(--button-shadow);
+}
+
+.contact-close:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .contact-close:focus-visible {
@@ -591,7 +635,7 @@ footer a:hover {
   outline-offset: 0.1875rem;
 }
 
-/* MEDIUM CONTACT CONTAINER
+/* CONTACT CONTAINER QUERIES
 ------------------------------------ */
 
 @container (min-width: 24rem) {
@@ -621,9 +665,6 @@ footer a:hover {
     grid-row: 2;
   }
 }
-
-/* LARGE CONTACT CONTAINER
------------------------------------- */
 
 @container (min-width: 28rem) {
   .contact-card {
@@ -745,5 +786,22 @@ footer a:hover {
 
   .projects-page .project-wrapper {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ACCESSIBILITY - REDUCED MOTION
+------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .contact-close,
+  .socials img {
+    transition: none;
+  }
+
+  .btn:hover,
+  .contact-close:hover,
+  .socials img:hover {
+    transform: none;
   }
 }
