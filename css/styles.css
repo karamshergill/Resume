@@ -1,6 +1,7 @@
 
-/* GLOBAL STYLES
------------------------------------- */
+/* =========================================
+   GLOBAL STYLES
+========================================= */
 
 :root {
   --font-body: "Open Sans", sans-serif;
@@ -20,7 +21,6 @@
   --accent-green: oklch(56% 0.11 150);
   --accent-beige: oklch(75% 0.04 70);
 
-  /* Animation custom properties */
   --button-transition: 0.25s ease;
   --button-shadow: 0 0.4rem 0.9rem rgb(0 0 0 / 0.18);
   --nav-transition: 0.3s ease;
@@ -81,8 +81,9 @@ a:hover {
   text-decoration: none;
 }
 
-/* BUTTON HOVER TRANSITIONS
------------------------------------- */
+/* =========================================
+   BUTTON STYLES
+========================================= */
 
 .btn {
   display: inline-block;
@@ -123,8 +124,9 @@ a:hover {
   outline-offset: 0.1875rem;
 }
 
-/* GENERAL LAYOUT
------------------------------------- */
+/* =========================================
+   CONTENT WRAPPER
+========================================= */
 
 .content-wrapper {
   inline-size: 100%;
@@ -133,8 +135,9 @@ a:hover {
   padding: 1.25rem;
 }
 
-/* HOME PAGE
------------------------------------- */
+/* =========================================
+   HOME PAGE
+========================================= */
 
 .home {
   min-block-size: 100vh;
@@ -156,8 +159,9 @@ a:hover {
   border-radius: 0.5rem;
 }
 
-/* RESUME PAGE
------------------------------------- */
+/* =========================================
+   RESUME PAGE
+========================================= */
 
 .resume .page-header::before {
   content: "";
@@ -183,8 +187,9 @@ a:hover {
   padding-block-end: 0.3125rem;
 }
 
-/* DOWNLOAD BUTTON
------------------------------------- */
+/* =========================================
+   DOWNLOAD BUTTON
+========================================= */
 
 .download-link {
   display: inline-block;
@@ -194,8 +199,9 @@ a:hover {
   font-size: 0.9375rem;
 }
 
-/* RESUME PROJECT STYLES
------------------------------------- */
+/* =========================================
+   RESUME PROJECTS
+========================================= */
 
 .project-item {
   margin-block: 1.875rem;
@@ -209,8 +215,9 @@ a:hover {
   object-fit: cover;
 }
 
-/* WORK EXPERIENCE
------------------------------------- */
+/* =========================================
+   WORK EXPERIENCE
+========================================= */
 
 .work-item {
   margin-block: 1.875rem;
@@ -224,8 +231,9 @@ a:hover {
   margin-block-start: 0;
 }
 
-/* EDUCATION
------------------------------------- */
+/* =========================================
+   EDUCATION
+========================================= */
 
 .education-item {
   margin-block: 1.875rem;
@@ -235,8 +243,9 @@ a:hover {
   margin: 0;
 }
 
-/* FOOTER
------------------------------------- */
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
   background: var(--neutral-9);
@@ -281,8 +290,9 @@ footer a:hover {
   transform: translateY(-0.125rem);
 }
 
-/* PROJECTS PAGE - SUBGRID
------------------------------------- */
+/* =========================================
+   PROJECTS PAGE - SUBGRID
+========================================= */
 
 .projects-page .project-wrapper {
   display: grid;
@@ -331,8 +341,9 @@ footer a:hover {
   grid-row: 3;
 }
 
-/* NAVIGATION - MOBILE FIRST
------------------------------------- */
+/* =========================================
+   NAVIGATION - MOBILE FIRST
+========================================= */
 
 .site-nav {
   background: var(--neutral-2);
@@ -351,8 +362,9 @@ footer a:hover {
   justify-content: space-between;
 }
 
-/* KS LOGO - PAGE LOAD ANIMATION
------------------------------------- */
+/* =========================================
+   KS LOGO - PAGE LOAD ANIMATION
+========================================= */
 
 .site-logo {
   display: inline-block;
@@ -364,7 +376,8 @@ footer a:hover {
   text-decoration: none;
   transform-origin: center;
 
-  animation: logoEntrance
+  animation:
+    logoEntrance
     var(--logo-animation-duration)
     ease-out
     both;
@@ -375,29 +388,38 @@ footer a:hover {
     text-shadow var(--nav-transition);
 }
 
-/* Keyframes for the KS logo */
 @keyframes logoEntrance {
   0% {
     opacity: 0;
-    transform: translateY(-1rem) scale(0.6) rotate(-15deg);
+    transform:
+      translateY(-1rem)
+      scale(0.6)
+      rotate(-15deg);
   }
 
   60% {
     opacity: 1;
-    transform: translateY(0.125rem) scale(1.1) rotate(5deg);
+    transform:
+      translateY(0.125rem)
+      scale(1.1)
+      rotate(5deg);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1) rotate(0);
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(0);
   }
 }
 
-/* Hover animation remains available */
 .site-logo:hover {
   color: var(--neutral-8);
   transform: scale(1.12) rotate(-5deg);
-  text-shadow: 0.125rem 0.125rem 0.25rem rgb(0 0 0 / 0.15);
+  text-shadow:
+    0.125rem 0.125rem 0.25rem
+    rgb(0 0 0 / 0.15);
 }
 
 .site-logo:focus-visible {
@@ -405,8 +427,9 @@ footer a:hover {
   outline-offset: 0.25rem;
 }
 
-/* HAMBURGER MENU
------------------------------------- */
+/* =========================================
+   HAMBURGER MENU
+========================================= */
 
 .nav-toggle {
   position: absolute;
@@ -469,8 +492,9 @@ footer a:hover {
   list-style: none;
 }
 
-/* NAVIGATION LINK HOVER ANIMATION
------------------------------------- */
+/* =========================================
+   NAVIGATION LINK HOVER EFFECTS
+========================================= */
 
 .nav-links a {
   display: inline-block;
@@ -514,9 +538,6 @@ footer a:hover {
   outline-offset: 0.25rem;
 }
 
-/* ACTIVE NAVIGATION LINK
------------------------------------- */
-
 .nav-links .nav-active {
   color: var(--accent-green);
   text-decoration: underline;
@@ -531,8 +552,9 @@ footer a:hover {
   transform: scaleX(1);
 }
 
-/* MOBILE NAVIGATION OPEN
------------------------------------- */
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
 
 .nav-toggle:checked ~ .nav-links {
   display: flex;
@@ -552,8 +574,9 @@ footer a:hover {
   transform: rotate(-45deg);
 }
 
-/* CONTACT NAVIGATION BUTTON
------------------------------------- */
+/* =========================================
+   CONTACT NAVIGATION BUTTON
+========================================= */
 
 .nav-links .nav-contact {
   background: var(--accent-green);
@@ -576,9 +599,6 @@ footer a:hover {
   text-underline-offset: 0.3125rem;
 }
 
-/* CONTACT BUTTON
------------------------------------- */
-
 .contact-btn {
   font-family: var(--font-body);
   font-weight: 600;
@@ -598,8 +618,9 @@ footer a:hover {
   outline-offset: 0.1875rem;
 }
 
-/* CONTACT POPOVER
------------------------------------- */
+/* =========================================
+   CONTACT POPOVER
+========================================= */
 
 #contact-popover {
   box-sizing: border-box;
@@ -631,15 +652,18 @@ footer a:hover {
   background: var(--neutral-1);
   color: var(--neutral-9);
 
-  box-shadow: 0 0.75rem 2.1875rem rgb(0 0 0 / 0.25);
+  box-shadow:
+    0 0.75rem 2.1875rem
+    rgb(0 0 0 / 0.25);
 }
 
 #contact-popover::backdrop {
   background: rgb(0 0 0 / 0.55);
 }
 
-/* CONTACT CARD
------------------------------------- */
+/* =========================================
+   CONTACT CARD
+========================================= */
 
 .contact-card {
   direction: ltr;
@@ -695,8 +719,9 @@ footer a:hover {
   color: var(--neutral-8);
 }
 
-/* CLOSE BUTTON
------------------------------------- */
+/* =========================================
+   CONTACT CLOSE BUTTON
+========================================= */
 
 .contact-close {
   background: var(--accent-green);
@@ -735,13 +760,15 @@ footer a:hover {
   outline-offset: 0.1875rem;
 }
 
-/* CONTACT CONTAINER QUERIES
------------------------------------- */
+/* =========================================
+   CONTACT CONTAINER QUERIES
+========================================= */
 
 @container (min-width: 24rem) {
   .contact-card {
     grid-template-columns:
-      minmax(0, 1fr) minmax(0, 2fr);
+      minmax(0, 1fr)
+      minmax(0, 2fr);
     gap: 0.9375rem;
   }
 
@@ -769,7 +796,8 @@ footer a:hover {
 @container (min-width: 28rem) {
   .contact-card {
     grid-template-columns:
-      minmax(0, 1fr) minmax(0, 2fr);
+      minmax(0, 1fr)
+      minmax(0, 2fr);
     gap: 1.25rem;
   }
 
@@ -778,8 +806,145 @@ footer a:hover {
   }
 }
 
-/* RESPONSIVE STYLES - MOBILE FIRST
------------------------------------- */
+/* =========================================
+   COMMIT 7 - ANIMATION SHOWCASE GRID
+========================================= */
+
+.animations-page .animation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-block-start: 1.5rem;
+}
+
+.animations-page .animation-card {
+  min-inline-size: 0;
+  padding: 1.25rem;
+  background: var(--neutral-2);
+  border-radius: 0.625rem;
+}
+
+.animations-page .animation-card h3 {
+  margin-block-end: 0.75rem;
+}
+
+.animations-page .animation-card p {
+  margin-block: 0.875rem;
+}
+
+.animations-page .animation-technique {
+  font-weight: 700;
+  color: var(--accent-green);
+}
+
+.animations-page .animation-back {
+  margin-block-start: 2rem;
+}
+
+.animations-page .animation-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--neutral-1);
+  border-radius: 0.625rem;
+}
+
+/* =========================================
+   COMMIT 8 - CLIP-PATH ANIMATION
+========================================= */
+
+.animations-page .clip-shape {
+  inline-size: 55%;
+  aspect-ratio: 1 / 1;
+  background: var(--accent-green);
+
+  animation:
+    morphClip
+    3.5s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes morphClip {
+  0% {
+    clip-path: polygon(
+      50% 0%,
+      100% 100%,
+      0% 100%
+    );
+
+    transform: rotate(0deg);
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%
+    );
+
+    transform: rotate(45deg);
+  }
+
+  100% {
+    clip-path: polygon(
+      50% 0%,
+      100% 50%,
+      50% 100%,
+      0% 50%
+    );
+
+    transform: rotate(0deg);
+  }
+}
+
+/* =========================================
+   STATIC SHAPES FOR FUTURE COMMITS
+========================================= */
+
+.animations-page .filter-shape {
+  inline-size: 55%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--accent-green);
+}
+
+.animations-page .blend-stage {
+  position: relative;
+}
+
+.animations-page .blend-shape {
+  position: absolute;
+  inline-size: 40%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.animations-page .blend-one {
+  background: var(--accent-green);
+  transform: translateX(-22%);
+}
+
+.animations-page .blend-two {
+  background: var(--accent-beige);
+  transform: translateX(22%);
+}
+
+.animations-page .blend-three {
+  background: var(--neutral-5);
+  transform: translateY(25%);
+}
+
+/* =========================================
+   RESPONSIVE STYLES - MOBILE FIRST
+========================================= */
 
 @media screen and (min-width: 31.25rem) {
   .home > .content-wrapper {
@@ -805,18 +970,21 @@ footer a:hover {
 
 @media screen and (min-width: 37.5rem) {
   .projects-page .project-wrapper {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 }
 
 @media screen and (min-width: 40.625rem) {
   .project-wrapper:not(.projects-page .project-wrapper) {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
     gap: 1.25rem;
   }
 
-  .project-wrapper:not(.projects-page .project-wrapper) .project-item img {
+  .project-wrapper:not(.projects-page .project-wrapper)
+  .project-item img {
     inline-size: 100%;
   }
 }
@@ -859,12 +1027,19 @@ footer a:hover {
     padding-block: 0.625rem;
     padding-inline: 0.9375rem;
   }
+
+  /* Desktop animation grid */
+  .animations-page .animation-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media screen and (min-width: 53.75rem) {
   .work-item {
     display: grid;
-    grid-template-columns: 18.75rem minmax(0, 1fr);
+    grid-template-columns:
+      18.75rem minmax(0, 1fr);
     column-gap: 1.25rem;
   }
 
@@ -885,12 +1060,14 @@ footer a:hover {
   }
 
   .projects-page .project-wrapper {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
   }
 }
 
-/* ACCESSIBILITY - REDUCED MOTION
------------------------------------- */
+/* =========================================
+   ACCESSIBILITY - REDUCED MOTION
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .btn,
@@ -913,6 +1090,17 @@ footer a:hover {
   .socials img:hover,
   .site-logo:hover,
   .nav-links a:hover {
+    transform: none;
+  }
+
+  .animations-page .clip-shape {
+    animation: none;
+    clip-path: polygon(
+      50% 0%,
+      100% 50%,
+      50% 100%,
+      0% 50%
+    );
     transform: none;
   }
 }
