@@ -1,158 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karamdeep Singh | Digital Design + Development Student</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karamdeep Singh | Digital Design + Development Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
+  <body class="home">
+    <!-- Navigation -->
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="site-logo nav-active" aria-current="page">
+          KS
+        </a>
 
-<body class="home">
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Show navigation menu"
+        />
 
-  <!-- Navigation -->
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="nav-inner">
+        <label
+          for="nav-toggle"
+          class="nav-toggle-label"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+        </label>
 
-      <a href="index.html" class="site-logo nav-active" aria-current="page">KS</a>
+        <ul class="nav-links">
+          <li>
+            <a href="resume.html">Resume</a>
+          </li>
+          <li>
+            <a href="projects.html">Projects</a>
+          </li>
+          <li>
+            <button
+              type="button"
+              popovertarget="contact-popover"
+              class="btn nav-contact contact-btn"
+            >
+              Contact
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Show navigation menu">
+    <!-- Contact Popover -->
+    <article id="contact-popover" popover>
+      <div class="contact-card">
+        <img
+          src="images/karam.jpg"
+          alt="Photo of Karamdeep Singh"
+          class="contact-photo"
+        />
 
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
-        <span></span>
-      </label>
+        <div class="contact-info">
+          <h2>Karamdeep Singh</h2>
 
-      <ul class="nav-links">
+          <p class="contact-role">Digital Design + Development Student</p>
+
+          <p class="contact-bio">
+            I am a Digital Design and Development student. I enjoy creating
+            websites and learning new skills.
+          </p>
+
+          <p class="contact-email">
+            <a href="mailto:ksingh86@northislandcollege.ca">
+              ksingh86@northislandcollege.ca
+            </a>
+          </p>
+
+          <p class="contact-phone">
+            Phone:
+            <a href="tel:5794839126">5794839126</a>
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="contact-close"
+          popovertarget="contact-popover"
+          popovertargetaction="hide"
+        >
+          Close
+        </button>
+      </div>
+    </article>
+
+    <!-- Home Content -->
+    <div class="content-wrapper">
+      <div class="content-bg">
+        <header>
+          <h1>Karamdeep Singh</h1>
+          <h2>Digital Design and Development Student</h2>
+        </header>
+
+        <main>
+          <p>
+            I am currently studying Digital Design and Development at North
+            Island College. I have a background in Electronics and Communication
+            Engineering and industrial instrumentation. I am learning HTML, CSS,
+            JavaScript and UI/UX design. I enjoy learning new technology,
+            creating websites and improving my design and coding skills.
+          </p>
+
+          <p>
+            To learn more about my projects, education and work experience,
+            check out the navigation above. Thanks for visiting my website!
+          </p>
+        </main>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        © 2026 by Karamdeep Singh |
+        <a href="mailto:ksingh86@northislandcollege.ca">
+          ksingh86@northislandcollege.ca
+        </a>
+      </p>
+
+      <ul class="socials">
         <li>
-          <a href="resume.html">Resume</a>
+          <a href="#" aria-label="YouTube">
+            <img src="images/icon-logo-youtube.png" alt="YouTube" />
+          </a>
         </li>
         <li>
-          <a href="projects.html">Projects</a>
+          <a href="#" aria-label="Portfolio">
+            <img src="images/icon-logo-ko-fi.png" alt="Portfolio" />
+          </a>
         </li>
         <li>
-          <button type="button" popovertarget="contact-popover" class="btn nav-contact contact-btn">
-            Contact
-          </button>
+          <a href="#" aria-label="Medium">
+            <img src="images/icon-logo-medium.png" alt="Medium" />
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Instagram">
+            <img src="images/icon-logo-instagram.png" alt="Instagram" />
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="LinkedIn">
+            <img src="images/icon-logo-linkedin.png" alt="LinkedIn" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://x.com/karam_sher_gill"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
+            <img src="images/icon-logo-twitter.png" alt="Twitter" />
+          </a>
         </li>
       </ul>
-
-    </div>
-  </nav>
-
-  <!-- Contact Popover -->
-  <article id="contact-popover" popover>
-    <div class="contact-card">
-
-      <img src="images/karam.jpg" alt="Photo of Karamdeep Singh" class="contact-photo">
-
-      <div class="contact-info">
-        <h2>Karamdeep Singh</h2>
-
-        <p class="contact-role">
-          Digital Design + Development Student
-        </p>
-
-        <p class="contact-bio">
-          I am a Digital Design and Development student.
-          I enjoy creating websites and learning new skills.
-        </p>
-
-        <p class="contact-email">
-          <a href="mailto:ksingh86@northislandcollege.ca">
-            ksingh86@northislandcollege.ca
-          </a>
-        </p>
-      </div>
-
-      <button type="button" class="contact-close" popovertarget="contact-popover" popovertargetaction="hide">
-        Close
-      </button>
-
-    </div>
-  </article>
-
-  <!-- Home Content -->
-  <div class="content-wrapper">
-    <div class="content-bg">
-
-      <header>
-        <h1>Karamdeep Singh</h1>
-        <h2>Digital Design and Development Student</h2>
-      </header>
-
-      <main>
-        <p>
-          I am currently studying Digital Design and
-          Development at North Island College.
-          I have a background in Electronics and
-          Communication Engineering and industrial
-          instrumentation. I am learning HTML,
-          CSS, JavaScript and UI/UX design.
-          I enjoy learning new technology,
-          creating websites and improving my
-          design and coding skills.
-        </p>
-
-        <p>
-          To learn more about my projects,
-          education and work experience,
-          check out my
-          <a href="resume.html">resume</a>.
-          Thanks for visiting my website!
-        </p>
-
-      </main>
-
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>
-      © 2026 by Karamdeep Singh |
-      <a href="mailto:ksingh86@northislandcollege.ca">
-        ksingh86@northislandcollege.ca
-      </a>
-    </p>
-
-    <ul class="socials">
-      <li>
-        <a href="#" aria-label="YouTube">
-          <img src="images/icon-logo-youtube.png" alt="YouTube">
-        </a>
-      </li>
-      <li>
-        <a href="#" aria-label="Portfolio">
-          <img src="images/icon-logo-ko-fi.png" alt="Portfolio">
-        </a>
-      </li>
-      <li>
-        <a href="#" aria-label="Medium">
-          <img src="images/icon-logo-medium.png" alt="Medium">
-        </a>
-      </li>
-      <li>
-        <a href="#" aria-label="Instagram">
-          <img src="images/icon-logo-instagram.png" alt="Instagram">
-        </a>
-      </li>
-      <li>
-        <a href="#" aria-label="LinkedIn">
-          <img src="images/icon-logo-linkedin.png" alt="LinkedIn">
-        </a>
-      </li>
-      <li>
-        <a href="https://x.com/karam_sher_gill" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-          <img src="images/icon-logo-twitter.png" alt="Twitter">
-        </a>
-      </li>
-    </ul>
-  </footer>
-
-</body>
-
+    </footer>
+  </body>
 </html>
