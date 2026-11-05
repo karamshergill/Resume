@@ -26,8 +26,9 @@
   --nav-transition: 0.3s ease;
   --logo-animation-duration: 1s;
 
-  /* Commit 9 animation variable */
+  /* Animation durations */
   --filter-animation-duration: 4s;
+  --blend-animation-duration: 5s;
 }
 
 html {
@@ -1007,34 +1008,141 @@ footer a:hover {
 }
 
 /* =========================================
-   STATIC BLEND SHAPES FOR COMMIT 10
+   COMMIT 10 - BLEND MODE ANIMATION
 ========================================= */
+
+/* Keep circles inside the animation card */
 
 .animations-page .blend-stage {
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--neutral-1),
+      var(--neutral-2)
+    );
 }
+
+/* Shared circle styles */
 
 .animations-page .blend-shape {
   position: absolute;
-  inline-size: 40%;
+  inline-size: 38%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  opacity: 0.8;
+  opacity: 0.85;
+
+  mix-blend-mode: multiply;
+
+  will-change: transform;
 }
+
+/* First green circle */
 
 .animations-page .blend-one {
   background: var(--accent-green);
-  transform: translateX(-22%);
+
+  animation:
+    blendMoveOne
+    var(--blend-animation-duration)
+    ease-in-out
+    infinite
+    alternate;
 }
+
+/* Second beige circle */
 
 .animations-page .blend-two {
   background: var(--accent-beige);
-  transform: translateX(22%);
+
+  animation:
+    blendMoveTwo
+    var(--blend-animation-duration)
+    ease-in-out
+    infinite
+    alternate;
 }
+
+/* Third grey-green circle */
 
 .animations-page .blend-three {
   background: var(--neutral-5);
-  transform: translateY(25%);
+
+  animation:
+    blendMoveThree
+    var(--blend-animation-duration)
+    ease-in-out
+    infinite
+    alternate;
+}
+
+/* Circle one moves left to right */
+
+@keyframes blendMoveOne {
+  0% {
+    transform:
+      translate(-45%, -10%)
+      scale(0.9);
+  }
+
+  50% {
+    transform:
+      translate(10%, 10%)
+      scale(1.15);
+  }
+
+  100% {
+    transform:
+      translate(45%, -15%)
+      scale(0.9);
+  }
+}
+
+/* Circle two moves right to left */
+
+@keyframes blendMoveTwo {
+  0% {
+    transform:
+      translate(45%, -10%)
+      scale(0.9);
+  }
+
+  50% {
+    transform:
+      translate(-10%, -15%)
+      scale(1.1);
+  }
+
+  100% {
+    transform:
+      translate(-45%, 15%)
+      scale(0.9);
+  }
+}
+
+/* Circle three moves vertically */
+
+@keyframes blendMoveThree {
+  0% {
+    transform:
+      translate(0%, 45%)
+      scale(0.85);
+  }
+
+  50% {
+    transform:
+      translate(0%, -35%)
+      scale(1.1);
+  }
+
+  100% {
+    transform:
+      translate(0%, 35%)
+      scale(0.85);
+  }
 }
 
 /* =========================================
@@ -1123,6 +1231,8 @@ footer a:hover {
     padding-inline: 0.9375rem;
   }
 
+  /* Three animation columns on desktop */
+
   .animations-page .animation-grid {
     grid-template-columns:
       repeat(3, minmax(0, 1fr));
@@ -1204,5 +1314,22 @@ footer a:hover {
     animation: none;
     filter: none;
     transform: none;
+  }
+
+  .animations-page .blend-shape {
+    animation: none;
+    will-change: auto;
+  }
+
+  .animations-page .blend-one {
+    transform: translate(-35%, -10%);
+  }
+
+  .animations-page .blend-two {
+    transform: translate(35%, -10%);
+  }
+
+  .animations-page .blend-three {
+    transform: translateY(35%);
   }
 }
