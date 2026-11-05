@@ -24,6 +24,7 @@
   --button-transition: 0.25s ease;
   --button-shadow: 0 0.4rem 0.9rem rgb(0 0 0 / 0.18);
   --nav-transition: 0.3s ease;
+  --logo-animation-duration: 1s;
 }
 
 html {
@@ -350,7 +351,9 @@ footer a:hover {
   justify-content: space-between;
 }
 
-/* KS Logo hover animation */
+/* KS LOGO - PAGE LOAD ANIMATION
+------------------------------------ */
+
 .site-logo {
   display: inline-block;
   color: var(--accent-green);
@@ -361,12 +364,36 @@ footer a:hover {
   text-decoration: none;
   transform-origin: center;
 
+  animation: logoEntrance
+    var(--logo-animation-duration)
+    ease-out
+    both;
+
   transition:
     color var(--nav-transition),
     transform var(--nav-transition),
     text-shadow var(--nav-transition);
 }
 
+/* Keyframes for the KS logo */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem) scale(0.6) rotate(-15deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(0.125rem) scale(1.1) rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+/* Hover animation remains available */
 .site-logo:hover {
   color: var(--neutral-8);
   transform: scale(1.12) rotate(-5deg);
@@ -378,7 +405,9 @@ footer a:hover {
   outline-offset: 0.25rem;
 }
 
-/* Hamburger menu */
+/* HAMBURGER MENU
+------------------------------------ */
+
 .nav-toggle {
   position: absolute;
   inline-size: 2.75rem;
@@ -440,7 +469,9 @@ footer a:hover {
   list-style: none;
 }
 
-/* Navigation links */
+/* NAVIGATION LINK HOVER ANIMATION
+------------------------------------ */
+
 .nav-links a {
   display: inline-block;
   position: relative;
@@ -455,7 +486,6 @@ footer a:hover {
     transform var(--nav-transition);
 }
 
-/* Animated underline */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -465,7 +495,7 @@ footer a:hover {
   block-size: 0.125rem;
   background: var(--accent-green);
   transform: scaleX(0);
-  transform-origin: inline-start;
+  transform-origin: left center;
   transition: transform var(--nav-transition);
 }
 
@@ -484,7 +514,9 @@ footer a:hover {
   outline-offset: 0.25rem;
 }
 
-/* Active navigation link */
+/* ACTIVE NAVIGATION LINK
+------------------------------------ */
+
 .nav-links .nav-active {
   color: var(--accent-green);
   text-decoration: underline;
@@ -499,7 +531,9 @@ footer a:hover {
   transform: scaleX(1);
 }
 
-/* Mobile navigation open */
+/* MOBILE NAVIGATION OPEN
+------------------------------------ */
+
 .nav-toggle:checked ~ .nav-links {
   display: flex;
 }
@@ -518,7 +552,9 @@ footer a:hover {
   transform: rotate(-45deg);
 }
 
-/* Contact navigation button */
+/* CONTACT NAVIGATION BUTTON
+------------------------------------ */
+
 .nav-links .nav-contact {
   background: var(--accent-green);
   color: var(--neutral-1);
@@ -864,6 +900,12 @@ footer a:hover {
   .nav-links a,
   .nav-links a::after {
     transition: none;
+  }
+
+  .site-logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   .btn:hover,
