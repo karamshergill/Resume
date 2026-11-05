@@ -20,9 +20,10 @@
   --accent-green: oklch(56% 0.11 150);
   --accent-beige: oklch(75% 0.04 70);
 
-  /* Animation settings */
+  /* Animation custom properties */
   --button-transition: 0.25s ease;
   --button-shadow: 0 0.4rem 0.9rem rgb(0 0 0 / 0.18);
+  --nav-transition: 0.3s ease;
 }
 
 html {
@@ -79,7 +80,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* BUTTONS
+/* BUTTON HOVER TRANSITIONS
 ------------------------------------ */
 
 .btn {
@@ -268,6 +269,7 @@ footer a:hover {
 .socials img {
   inline-size: 2rem;
   block-size: 2rem;
+
   transition:
     opacity var(--button-transition),
     transform var(--button-transition);
@@ -348,15 +350,35 @@ footer a:hover {
   justify-content: space-between;
 }
 
+/* KS Logo hover animation */
 .site-logo {
+  display: inline-block;
   color: var(--accent-green);
   font-family: var(--font-heading);
   font-size: 2.25rem;
   font-weight: bold;
   line-height: 1;
   text-decoration: none;
+  transform-origin: center;
+
+  transition:
+    color var(--nav-transition),
+    transform var(--nav-transition),
+    text-shadow var(--nav-transition);
 }
 
+.site-logo:hover {
+  color: var(--neutral-8);
+  transform: scale(1.12) rotate(-5deg);
+  text-shadow: 0.125rem 0.125rem 0.25rem rgb(0 0 0 / 0.15);
+}
+
+.site-logo:focus-visible {
+  outline: 0.1875rem solid var(--accent-green);
+  outline-offset: 0.25rem;
+}
+
+/* Hamburger menu */
 .nav-toggle {
   position: absolute;
   inline-size: 2.75rem;
@@ -418,19 +440,66 @@ footer a:hover {
   list-style: none;
 }
 
+/* Navigation links */
 .nav-links a {
   display: inline-block;
+  position: relative;
   color: var(--neutral-9);
   text-decoration: none;
   font-weight: 600;
   padding-block: 0.375rem;
   padding-inline: 0;
+
+  transition:
+    color var(--nav-transition),
+    transform var(--nav-transition);
+}
+
+/* Animated underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  inline-size: 100%;
+  block-size: 0.125rem;
+  background: var(--accent-green);
+  transform: scaleX(0);
+  transform-origin: inline-start;
+  transition: transform var(--nav-transition);
 }
 
 .nav-links a:hover {
   color: var(--accent-green);
+  transform: translateY(-0.125rem);
 }
 
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.nav-links a:focus-visible {
+  outline: 0.1875rem solid var(--accent-green);
+  outline-offset: 0.25rem;
+}
+
+/* Active navigation link */
+.nav-links .nav-active {
+  color: var(--accent-green);
+  text-decoration: underline;
+  text-underline-offset: 0.3125rem;
+}
+
+.nav-links .nav-active::after {
+  transform: scaleX(0);
+}
+
+.nav-links .nav-active:hover::after {
+  transform: scaleX(1);
+}
+
+/* Mobile navigation open */
 .nav-toggle:checked ~ .nav-links {
   display: flex;
 }
@@ -449,6 +518,7 @@ footer a:hover {
   transform: rotate(-45deg);
 }
 
+/* Contact navigation button */
 .nav-links .nav-contact {
   background: var(--accent-green);
   color: var(--neutral-1);
@@ -463,12 +533,6 @@ footer a:hover {
 .nav-links .nav-contact:hover {
   background: var(--neutral-8);
   color: var(--neutral-1);
-}
-
-.nav-links .nav-active {
-  color: var(--accent-green);
-  text-decoration: underline;
-  text-underline-offset: 0.3125rem;
 }
 
 .site-logo.nav-active {
@@ -795,13 +859,18 @@ footer a:hover {
 @media (prefers-reduced-motion: reduce) {
   .btn,
   .contact-close,
-  .socials img {
+  .socials img,
+  .site-logo,
+  .nav-links a,
+  .nav-links a::after {
     transition: none;
   }
 
   .btn:hover,
   .contact-close:hover,
-  .socials img:hover {
+  .socials img:hover,
+  .site-logo:hover,
+  .nav-links a:hover {
     transform: none;
   }
 }
