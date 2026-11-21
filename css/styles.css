@@ -30,6 +30,10 @@
 
   --svg-animation-delay: 1s;
   --fan-animation-duration: 1.2s;
+
+  --airflow-duration: 1.5s;
+  --airflow-delay: 0.2s;
+  --airflow-stagger: 0.25s;
 }
 
 
@@ -415,6 +419,7 @@ footer a:hover {
 @keyframes logoEntrance {
   0% {
     opacity: 0;
+
     transform:
       translateY(-1rem)
       scale(0.6)
@@ -423,6 +428,7 @@ footer a:hover {
 
   60% {
     opacity: 1;
+
     transform:
       translateY(0.125rem)
       scale(1.1)
@@ -431,6 +437,7 @@ footer a:hover {
 
   100% {
     opacity: 1;
+
     transform:
       translateY(0)
       scale(1)
@@ -496,7 +503,6 @@ footer a:hover {
 .nav-toggle-label span::after {
   content: "";
   position: absolute;
-
   inset-inline-start: 0;
 }
 
@@ -815,7 +821,6 @@ footer a:hover {
   .contact-photo {
     grid-column: 1;
     grid-row: 1;
-
     max-block-size: none;
   }
 
@@ -1158,6 +1163,59 @@ footer a:hover {
 }
 
 
+/* SVG AIRFLOW ANIMATION */
+
+.svg-page #wind-one,
+.svg-page #wind-two,
+.svg-page #wind-three {
+  opacity: 0;
+
+  animation-name: moveAirflow;
+  animation-duration: var(--airflow-duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.svg-page #wind-one {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--airflow-delay)
+  );
+}
+
+.svg-page #wind-two {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--airflow-delay) +
+    var(--airflow-stagger)
+  );
+}
+
+.svg-page #wind-three {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--airflow-delay) +
+    var(--airflow-stagger) * 2
+  );
+}
+
+@keyframes moveAirflow {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -40;
+    opacity: 0.3;
+  }
+}
+
+
 /* RESPONSIVE STYLES */
 
 @media screen and (min-width: 31.25rem) {
@@ -1354,5 +1412,13 @@ footer a:hover {
   .svg-page #fan-blades {
     animation: none;
     transform: none;
+  }
+
+  .svg-page #wind-one,
+  .svg-page #wind-two,
+  .svg-page #wind-three {
+    animation: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
   }
 }
