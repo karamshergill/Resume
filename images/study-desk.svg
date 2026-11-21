@@ -1,0 +1,292 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 800 500"
+     width="800"
+     height="500">
+
+  <!-- Room background -->
+  <rect x="0" y="0"
+        width="800" height="500"
+        rx="12" fill="#F1F0E7"/>
+
+  <!-- Window -->
+  <g id="window">
+
+    <rect x="530" y="45"
+          width="170" height="180"
+          rx="5" fill="#8FA695"/>
+
+    <rect x="540" y="55"
+          width="150" height="160"
+          fill="#DCE8DF"/>
+
+    <circle cx="650" cy="90"
+            r="25" fill="#E4C98B"/>
+
+    <path d="M540 135 H690 M615 55 V215"
+          stroke="#8FA695"
+          stroke-width="7"
+          fill="none"/>
+
+  </g>
+
+  <!-- Study table -->
+  <g id="study-table">
+
+    <rect x="60" y="355"
+          width="680" height="22"
+          rx="4" fill="#AE8E65"/>
+
+    <rect x="95" y="377"
+          width="22" height="90"
+          fill="#81684E"/>
+
+    <rect x="683" y="377"
+          width="22" height="90"
+          fill="#81684E"/>
+
+  </g>
+
+  <!-- Fan stand -->
+  <g id="fan-stand">
+
+    <rect x="176" y="212"
+          width="18" height="135"
+          rx="7" fill="#7B9985"/>
+
+    <ellipse cx="185" cy="347"
+             rx="65" ry="8"
+             fill="#567761"/>
+
+  </g>
+
+  <!-- Fan frame -->
+  <g id="fan-frame">
+
+    <circle cx="185" cy="155"
+            r="90"
+            fill="#CED9CC"
+            stroke="#567761"
+            stroke-width="6"/>
+
+    <circle cx="185" cy="155"
+            r="78"
+            fill="#E5EBE2"/>
+
+  </g>
+
+  <!-- Fan blades -->
+  <g id="fan-blades" fill="#80A28C">
+
+    <path id="blade-one"
+          d="M185 155
+             C140 91 181 75 206 95
+             C222 115 205 139 185 155 Z"/>
+
+    <path id="blade-two"
+          d="M185 155
+             C140 91 181 75 206 95
+             C222 115 205 139 185 155 Z"
+          transform="rotate(90 185 155)"/>
+
+    <path id="blade-three"
+          d="M185 155
+             C140 91 181 75 206 95
+             C222 115 205 139 185 155 Z"
+          transform="rotate(180 185 155)"/>
+
+    <path id="blade-four"
+          d="M185 155
+             C140 91 181 75 206 95
+             C222 115 205 139 185 155 Z"
+          transform="rotate(270 185 155)"/>
+
+  </g>
+
+  <!-- Fan centre -->
+  <circle id="fan-centre"
+          cx="185" cy="155"
+          r="15"
+          fill="#486B55"/>
+
+  <!-- Airflow -->
+  <g id="airflow"
+     fill="none"
+     stroke="#809F90"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-dasharray="12 8">
+
+    <path id="wind-one"
+          d="M284 125 Q350 103 410 145"/>
+
+    <path id="wind-two"
+          d="M285 165 Q366 145 430 190"/>
+
+    <path id="wind-three"
+          d="M275 205 Q340 200 390 240"/>
+
+  </g>
+
+  <!-- Books -->
+  <g id="books">
+
+    <rect x="85" y="335"
+          width="130" height="20"
+          rx="3" fill="#769482"/>
+
+    <rect x="95" y="315"
+          width="125" height="19"
+          rx="3" fill="#D0B68C"/>
+
+    <rect x="80" y="295"
+          width="130" height="19"
+          rx="3" fill="#A2B5A6"/>
+
+    <path d="M110 305 H200
+             M125 324 H210
+             M115 345 H205"
+          stroke="#F4EFDF"
+          stroke-width="3"
+          fill="none"/>
+
+  </g>
+
+  <!-- Notebook -->
+  <g id="notebook">
+
+    <path id="notebook-cover"
+          d="M310 325
+             L410 300
+             L510 330
+             L410 355 Z"
+          fill="#5C7C68"/>
+
+    <path id="notebook-base"
+          d="M315 317
+             L410 290
+             L505 320
+             L410 346 Z"
+          fill="#FFFDF4"
+          stroke="#C2BDAB"
+          stroke-width="2"/>
+
+    <path id="notebook-page-one"
+          d="M410 346
+             L410 290
+             Q470 242 505 280
+             L505 320 Z"
+          fill="#E4DFCB"
+          stroke="#C2BDAB"
+          stroke-width="2"/>
+
+    <path id="notebook-page-two"
+          d="M410 346
+             L410 290
+             Q445 215 485 240
+             Q470 284 505 320 Z"
+          fill="#FFFDF4"
+          stroke="#C2BDAB"
+          stroke-width="2"/>
+
+    <path id="notebook-lines"
+          d="M409 291 V345
+             M336 319 L390 304
+             M345 328 L397 312
+             M369 335 L399 325"
+          stroke="#A2B5A6"
+          stroke-width="2"
+          fill="none"/>
+
+  </g>
+
+  <!-- Pen -->
+  <g id="pen">
+
+    <path d="M465 346 L526 330"
+          stroke="#526F5D"
+          stroke-width="7"
+          stroke-linecap="round"/>
+
+    <path d="M526 330 L537 327"
+          stroke="#C7A777"
+          stroke-width="3"/>
+
+  </g>
+
+  <!-- Coffee cup -->
+  <g id="coffee-cup">
+
+    <ellipse cx="580" cy="350"
+             rx="45" ry="5"
+             fill="#C6B89D"/>
+
+    <path d="M550 293
+             H610
+             L602 346
+             H558 Z"
+          fill="#A3B7A4"
+          stroke="#789784"
+          stroke-width="2"/>
+
+    <ellipse cx="580" cy="293"
+             rx="30" ry="7"
+             fill="#785D45"/>
+
+    <path d="M610 302
+             C641 291 642 333 605 329"
+          stroke="#789784"
+          stroke-width="6"
+          fill="none"/>
+
+  </g>
+
+  <!-- Coffee steam -->
+  <g id="coffee-steam"
+     fill="none"
+     stroke="#A2B3A6"
+     stroke-width="3"
+     stroke-linecap="round">
+
+    <path id="steam-one"
+          d="M570 277
+             Q556 265 570 250
+             Q583 235 570 220"/>
+
+    <path id="steam-two"
+          d="M590 277
+             Q603 260 590 242"/>
+
+  </g>
+
+  <!-- Plant -->
+  <g id="plant">
+
+    <path id="plant-pot"
+          d="M662 310
+             H712
+             L704 355
+             H670 Z"
+          fill="#B49A79"/>
+
+    <path id="plant-leaf-one"
+          d="M686 310
+             Q645 269 653 250
+             Q678 257 686 310 Z"
+          fill="#6E9279"/>
+
+    <path id="plant-leaf-two"
+          d="M686 310
+             Q726 249 739 269
+             Q723 292 686 310 Z"
+          fill="#83A58B"/>
+
+    <path id="plant-leaf-three"
+          d="M686 310
+             Q668 244 687 231
+             Q707 260 686 310 Z"
+          fill="#567D64"/>
+
+  </g>
+
+</svg>
