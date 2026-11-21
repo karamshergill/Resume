@@ -29,27 +29,27 @@
   --blend-animation-duration: 5s;
 
   --svg-animation-delay: 1s;
-  --fan-animation-duration: 1.2s;
+  --fan-animation-duration: 0.9s;
 
-  --airflow-duration: 1.5s;
-  --airflow-delay: 0.2s;
-  --airflow-stagger: 0.25s;
+  --airflow-duration: 1.2s;
+  --airflow-delay: 0.15s;
+  --airflow-stagger: 0.2s;
 
-  --page-one-duration: 1.6s;
-  --page-two-duration: 1.3s;
-  --notebook-delay: 0.8s;
-  --notebook-stagger: 0.3s;
+  --page-one-duration: 1.2s;
+  --page-two-duration: 1s;
+  --notebook-delay: 0.6s;
+  --notebook-stagger: 0.2s;
 
-  --steam-duration: 2.4s;
-  --steam-delay: 1.3s;
-  --steam-stagger: 0.6s;
+  --steam-duration: 3s;
+  --steam-delay: 1s;
+  --steam-stagger: 0.8s;
 
-  --plant-delay: 2s;
-  --plant-stagger: 0.3s;
+  --plant-delay: 1.2s;
+  --plant-stagger: 0.25s;
 
-  --leaf-one-duration: 1.8s;
-  --leaf-two-duration: 2.1s;
-  --leaf-three-duration: 2.4s;
+  --leaf-one-duration: 2.2s;
+  --leaf-two-duration: 2.5s;
+  --leaf-three-duration: 2.8s;
 }
 
 
@@ -1373,15 +1373,15 @@ footer a:hover {
 
 @keyframes swayLeaves {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(-3deg);
   }
 
   50% {
-    transform: rotate(7deg);
+    transform: rotate(2deg);
   }
 
   100% {
-    transform: rotate(-4deg);
+    transform: rotate(6deg);
   }
 }
 
