@@ -1834,4 +1834,38 @@ footer a:hover {
   .svg-page #plant-leaf-three {
     transform: none;
   }
+
+/* SVG PROJECT CARD */
+
+.projects-page .project-item > a {
+  display: block;
+  grid-row: 1;
+  min-inline-size: 0;
 }
+
+.projects-page .project-description {
+  grid-row: 3;
+  min-inline-size: 0;
+}
+
+.projects-page .project-description p {
+  margin: 0;
+}
+
+.projects-page .project-description br {
+  display: none;
+}
+
+.projects-page .project-description .btn {
+  margin-block-start: 1rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.projects-page .project-item img[src$="svg-showcase.png"] {
+  object-fit: contain;
+  background: var(--neutral-1);
+}
+
+}
+
