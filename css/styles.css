@@ -34,6 +34,11 @@
   --airflow-duration: 1.5s;
   --airflow-delay: 0.2s;
   --airflow-stagger: 0.25s;
+
+  --page-one-duration: 1.6s;
+  --page-two-duration: 1.3s;
+  --notebook-delay: 0.8s;
+  --notebook-stagger: 0.3s;
 }
 
 
@@ -1216,6 +1221,58 @@ footer a:hover {
 }
 
 
+/* SVG NOTEBOOK ANIMATION */
+
+.svg-page #notebook-page-one {
+  animation-name: flutterPageOne;
+  animation-duration: var(--page-one-duration);
+  animation-timing-function: ease-in-out;
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--notebook-delay)
+  );
+
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.svg-page #notebook-page-two {
+  animation-name: flutterPageTwo;
+  animation-duration: var(--page-two-duration);
+  animation-timing-function: ease-in-out;
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--notebook-delay) +
+    var(--notebook-stagger)
+  );
+
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes flutterPageOne {
+  from {
+    d: path("M410 346 L410 290 Q470 242 505 280 L505 320 Z");
+  }
+
+  to {
+    d: path("M410 346 L410 290 Q470 220 500 260 L500 310 Z");
+  }
+}
+
+@keyframes flutterPageTwo {
+  from {
+    d: path("M410 346 L410 290 Q445 215 485 240 Q470 284 505 320 Z");
+  }
+
+  to {
+    d: path("M410 346 L410 290 Q440 185 480 215 Q455 265 498 305 Z");
+  }
+}
+
+
 /* RESPONSIVE STYLES */
 
 @media screen and (min-width: 31.25rem) {
@@ -1420,5 +1477,10 @@ footer a:hover {
     animation: none;
     opacity: 1;
     stroke-dashoffset: 0;
+  }
+
+  .svg-page #notebook-page-one,
+  .svg-page #notebook-page-two {
+    animation: none;
   }
 }
