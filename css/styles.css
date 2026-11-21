@@ -43,6 +43,13 @@
   --steam-duration: 2.4s;
   --steam-delay: 1.3s;
   --steam-stagger: 0.6s;
+
+  --plant-delay: 2s;
+  --plant-stagger: 0.3s;
+
+  --leaf-one-duration: 1.8s;
+  --leaf-two-duration: 2.1s;
+  --leaf-three-duration: 2.4s;
 }
 
 
@@ -1321,6 +1328,64 @@ footer a:hover {
 }
 
 
+/* SVG PLANT ANIMATION */
+
+.svg-page #plant-leaf-one,
+.svg-page #plant-leaf-two,
+.svg-page #plant-leaf-three {
+  transform-box: view-box;
+  transform-origin: 85.75% 62%;
+
+  animation-name: swayLeaves;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.svg-page #plant-leaf-one {
+  animation-duration: var(--leaf-one-duration);
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--plant-delay)
+  );
+}
+
+.svg-page #plant-leaf-two {
+  animation-duration: var(--leaf-two-duration);
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--plant-delay) +
+    var(--plant-stagger)
+  );
+}
+
+.svg-page #plant-leaf-three {
+  animation-duration: var(--leaf-three-duration);
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--plant-delay) +
+    var(--plant-stagger) * 2
+  );
+}
+
+@keyframes swayLeaves {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(7deg);
+  }
+
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+
 /* RESPONSIVE STYLES */
 
 @media screen and (min-width: 31.25rem) {
@@ -1536,6 +1601,13 @@ footer a:hover {
   .svg-page #steam-two {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+
+  .svg-page #plant-leaf-one,
+  .svg-page #plant-leaf-two,
+  .svg-page #plant-leaf-three {
+    animation: none;
     transform: none;
   }
 }
