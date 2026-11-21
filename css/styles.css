@@ -5,12 +5,10 @@
 
 :root {
   /* Typography */
-
   --font-body: "Open Sans", sans-serif;
   --font-heading: "Caveat", cursive;
 
   /* Colour palette */
-
   --neutral: oklch(50% 0.02 150);
 
   --neutral-1: oklch(from var(--neutral) 98% c h);
@@ -23,8 +21,8 @@
 
   --accent-green: oklch(56% 0.11 150);
   --accent-beige: oklch(75% 0.04 70);
-
   --accent-dark: oklch(43% 0.09 150);
+
   --card-background: oklch(100% 0 0);
   --header-background: oklch(93% 0.025 150);
 
@@ -33,7 +31,6 @@
   --backdrop-colour: oklch(0% 0 0 / 0.55);
 
   /* Shadow colours */
-
   --shadow-light: oklch(0% 0 0 / 0.12);
   --shadow-medium: oklch(0% 0 0 / 0.18);
   --shadow-dark: oklch(0% 0 0 / 0.25);
@@ -45,13 +42,14 @@
   --card-hover-shadow:
     0 0.5rem 1.5rem oklch(20% 0.02 150 / 0.14);
 
-  /* Layout */
+  --button-shadow:
+    0 0.4rem 0.9rem var(--shadow-medium);
 
+  /* Layout */
   --content-max-size: 56.25rem;
   --wide-content-max-size: 68.75rem;
 
   /* Spacing */
-
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space-md: 1rem;
@@ -62,29 +60,22 @@
   --section-spacing: clamp(2rem, 5vi, 3.5rem);
 
   /* Border radius */
-
   --radius-small: 0.25rem;
   --radius-medium: 0.5rem;
   --radius-large: 0.625rem;
   --radius-card: 0.875rem;
 
   /* Transitions */
-
   --button-transition: 0.25s ease;
   --nav-transition: 0.3s ease;
   --card-transition: 0.3s ease;
 
-  --button-shadow:
-    0 0.4rem 0.9rem var(--shadow-medium);
-
   /* CSS animation timing */
-
   --logo-animation-duration: 1s;
   --filter-animation-duration: 4s;
   --blend-animation-duration: 5s;
 
   /* SVG animation timing */
-
   --svg-animation-delay: 1s;
   --fan-animation-duration: 0.9s;
 
@@ -109,8 +100,6 @@
   --leaf-three-duration: 2.8s;
 
   /* SVG showcase layout */
-
-  --svg-radius: 0.75rem;
   --svg-spacing: clamp(0.75rem, 2vi, 1.5rem);
 
   --svg-shadow:
@@ -158,7 +147,6 @@ h3 {
 
   font-family: var(--font-heading);
   font-weight: 400;
-
   line-height: 1.2;
 }
 
@@ -192,14 +180,42 @@ img {
   max-inline-size: 100%;
 }
 
+main {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+main img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
 .content-wrapper {
   inline-size: 100%;
   max-inline-size: var(--content-max-size);
+  min-inline-size: 0;
 
   margin-inline: auto;
 
   padding-block: clamp(1.25rem, 3vi, 2rem);
   padding-inline: var(--space-lg);
+}
+
+.content-bg,
+.resume-section,
+.project-wrapper,
+.project-item,
+.animation-card,
+.svg-figure {
+  min-inline-size: 0;
+}
+
+main a:focus-visible,
+.download-link:focus-visible {
+  outline: 0.1875rem solid var(--accent-dark);
+  outline-offset: 0.25rem;
+
+  border-radius: var(--radius-small);
 }
 
 
@@ -212,7 +228,7 @@ img {
 
   max-inline-size: 100%;
 
-  padding-block: 0.75rem;
+  padding-block: var(--space-sm);
   padding-inline: var(--space-lg);
 
   background: var(--accent-dark);
@@ -231,6 +247,8 @@ img {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+
+  white-space: normal;
 
   cursor: pointer;
 
@@ -338,7 +356,7 @@ img {
   text-underline-offset: 0.3125rem;
 }
 
-/* Mobile navigation toggle */
+/* Mobile navigation */
 
 .nav-toggle {
   position: absolute;
@@ -447,7 +465,6 @@ img {
 
 .nav-links a {
   display: inline-block;
-
   position: relative;
 
   padding-block: 0.375rem;
@@ -456,7 +473,6 @@ img {
   color: var(--neutral-9);
 
   font-weight: 600;
-
   text-decoration: none;
 
   transition:
@@ -675,7 +691,6 @@ img {
 .contact-info h2 {
   font-family: var(--font-heading);
   font-size: 2.25rem;
-
   line-height: 1.1;
 
   margin-block: 0 0.625rem;
@@ -916,19 +931,25 @@ img {
   color: var(--accent-dark);
 }
 
+.resume-section p {
+  overflow-wrap: anywhere;
+}
+
 .resume-section > p {
   line-height: 1.75;
 }
 
 .download-link {
   display: inline-block;
-
   position: relative;
 
   margin-block-start: var(--space-md);
   margin-inline-start: var(--space-lg);
 
   font-size: 0.9375rem;
+
+  max-inline-size:
+    calc(100% - var(--space-lg));
 }
 
 /* Work experience and education */
@@ -964,6 +985,7 @@ img {
   color: var(--accent-dark);
 }
 
+.work-details,
 .work-summary {
   min-inline-size: 0;
 }
@@ -1046,7 +1068,7 @@ img {
 
 /* Project images */
 
-.projects-page .project-item > a {
+.projects-page .project-item > a:first-child {
   display: block;
 
   grid-row: 1;
@@ -1057,6 +1079,8 @@ img {
 }
 
 .projects-page .project-item img {
+  display: block;
+
   grid-row: 1;
 
   inline-size: 100%;
@@ -1070,25 +1094,30 @@ img {
   object-fit: cover;
 }
 
-.projects-page .project-item img[src$="svg-showcase.png"],
-.projects-page .project-item img[src$="animation-showcase.png"] {
+/* Keep full animation screenshots visible */
+
+.projects-page .project-item
+img[src$="svg-showcase.png"],
+.projects-page .project-item
+img[src$="animation-showcase.png"] {
   object-fit: contain;
 
   background: var(--neutral-1);
 }
 
-/* Project titles and descriptions */
+/* Project titles */
 
 .projects-page .project-item h3 {
   grid-row: 2;
 
   margin-block: var(--space-sm);
-
   margin-inline: 0;
 
   color: var(--accent-dark);
 
   line-height: 1.25;
+
+  overflow-wrap: anywhere;
 }
 
 .projects-page .project-item h3 a {
@@ -1101,7 +1130,9 @@ img {
   text-decoration: underline;
 }
 
-.projects-page .project-item p,
+/* Project descriptions */
+
+.projects-page .project-item > p,
 .projects-page .project-description {
   grid-row: 3;
 }
@@ -1111,24 +1142,42 @@ img {
   margin-inline: 0;
 
   font-size: 0.9375rem;
-
   line-height: 1.7;
+
+  overflow-wrap: anywhere;
 }
 
 .projects-page .project-description {
   min-inline-size: 0;
+
+  overflow-wrap: anywhere;
 }
 
-.projects-page .project-description br {
-  display: none;
-}
+/* Project buttons */
 
-.projects-page .project-description .btn {
+.projects-page .project-item .btn {
+  display: inline-block;
+
+  max-inline-size: 100%;
+
   margin-block-start: var(--space-md);
 
-  line-height: 1.4;
+  white-space: normal;
 
   text-align: center;
+
+  line-height: 1.5;
+}
+
+/* Fallback for browsers without subgrid */
+
+@supports not (grid-template-rows: subgrid) {
+  .projects-page .project-item {
+    grid-row: auto;
+
+    grid-template-rows:
+      auto auto 1fr;
+  }
 }
 
 
@@ -1162,6 +1211,8 @@ img {
   border-radius: var(--radius-card);
 
   box-shadow: var(--card-shadow);
+
+  overflow-wrap: anywhere;
 }
 
 .animations-page .animation-card h3 {
@@ -1174,7 +1225,6 @@ img {
   margin-block: 0.875rem;
 
   font-size: 0.9375rem;
-
   line-height: 1.7;
 }
 
@@ -1198,6 +1248,7 @@ img {
   isolation: isolate;
 
   inline-size: 100%;
+  max-inline-size: 100%;
 
   aspect-ratio: 1 / 1;
 
@@ -1538,7 +1589,6 @@ img {
 
   font-size: 0.875rem;
   font-style: italic;
-
   line-height: 1.6;
 
   text-align: center;
@@ -1635,7 +1685,7 @@ img {
     infinite;
 }
 
-/* Airflow */
+/* Airflow paths */
 
 .svg-page #wind-one,
 .svg-page #wind-two,
@@ -1801,6 +1851,7 @@ img {
 @keyframes moveAirflow {
   0% {
     stroke-dashoffset: 0;
+
     opacity: 0.3;
   }
 
@@ -1810,6 +1861,7 @@ img {
 
   100% {
     stroke-dashoffset: -40;
+
     opacity: 0.3;
   }
 }
@@ -1818,21 +1870,29 @@ img {
 
 @keyframes flutterPageOne {
   from {
-    d: path("M410 346 L410 290 Q470 242 505 280 L505 320 Z");
+    d: path(
+      "M410 346 L410 290 Q470 242 505 280 L505 320 Z"
+    );
   }
 
   to {
-    d: path("M410 346 L410 290 Q470 220 500 260 L500 310 Z");
+    d: path(
+      "M410 346 L410 290 Q470 220 500 260 L500 310 Z"
+    );
   }
 }
 
 @keyframes flutterPageTwo {
   from {
-    d: path("M410 346 L410 290 Q445 215 485 240 Q470 284 505 320 Z");
+    d: path(
+      "M410 346 L410 290 Q445 215 485 240 Q470 284 505 320 Z"
+    );
   }
 
   to {
-    d: path("M410 346 L410 290 Q440 185 480 215 Q455 265 498 305 Z");
+    d: path(
+      "M410 346 L410 290 Q440 185 480 215 Q455 265 498 305 Z"
+    );
   }
 }
 
@@ -1895,6 +1955,8 @@ footer {
   font-size: 0.875rem;
 
   text-align: center;
+
+  overflow-wrap: anywhere;
 }
 
 footer p {
@@ -1908,6 +1970,13 @@ footer a {
 
 footer a:hover {
   color: var(--card-background);
+}
+
+footer a:focus-visible {
+  outline: 0.1875rem solid var(--accent-beige);
+  outline-offset: 0.25rem;
+
+  border-radius: var(--radius-small);
 }
 
 /* Social media icons */
@@ -1932,6 +2001,10 @@ footer a:hover {
 
 .socials li {
   display: inline-block;
+}
+
+.socials a {
+  display: block;
 }
 
 .socials img {
@@ -1989,6 +2062,8 @@ footer a:hover {
     inline-size: auto;
   }
 }
+
+/* Other project layouts */
 
 @media screen and (min-width: 40.625rem) {
   .project-wrapper:not(.projects-page .project-wrapper) {
@@ -2107,6 +2182,56 @@ footer a:hover {
   }
 }
 
+/* Small mobile screen adjustments */
+
+@media screen and (max-width: 25rem) {
+  .content-wrapper {
+    padding-inline: var(--space-md);
+  }
+
+  .home > .content-wrapper {
+    padding-inline: var(--space-md);
+  }
+
+  .resume .page-header h1,
+  .svg-page .page-header h1,
+  .content-bg h1 {
+    font-size: 2.75rem;
+  }
+
+  .resume .page-header h2,
+  .svg-page .page-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .projects-page .project-item,
+  .animations-page .animation-card {
+    padding-block: var(--space-sm);
+    padding-inline: var(--space-sm);
+  }
+
+  .projects-page .project-item .btn,
+  .animations-page .animation-back .btn,
+  .svg-page .svg-back .btn {
+    inline-size: 100%;
+  }
+
+  .work-item,
+  .education-item {
+    padding-block: var(--space-md);
+    padding-inline: var(--space-md);
+  }
+
+  .socials {
+    gap: var(--space-xs);
+  }
+
+  .socials img {
+    inline-size: 1.75rem;
+    block-size: 1.75rem;
+  }
+}
+
 
 /* ========================================
    14. Reduced Motion
@@ -2133,7 +2258,7 @@ footer a:hover {
     scroll-behavior: auto;
   }
 
-  /* Disable logo animation */
+  /* Disable logo entrance animation */
 
   .site-logo {
     animation: none;
@@ -2204,7 +2329,7 @@ footer a:hover {
     transition: none;
   }
 
-  /* Keep SVG elements visible and stationary */
+  /* Keep SVG elements stationary */
 
   .svg-page #fan-blades,
   .svg-page #notebook-page-one,
@@ -2216,6 +2341,8 @@ footer a:hover {
   .svg-page #plant-leaf-three {
     transform: none;
   }
+
+  /* Keep airflow and steam visible */
 
   .svg-page #wind-one,
   .svg-page #wind-two,
