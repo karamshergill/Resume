@@ -1,18 +1,22 @@
 
-/* VARIABLES */
+/* ========================================
+   01. Custom Properties
+======================================== */
 
 :root {
+  /* Typography */
+
   --font-body: "Open Sans", sans-serif;
   --font-heading: "Caveat", cursive;
+
+  /* Colour palette */
 
   --neutral: oklch(50% 0.02 150);
 
   --neutral-1: oklch(from var(--neutral) 98% c h);
   --neutral-2: oklch(from var(--neutral) 90% c h);
   --neutral-3: oklch(from var(--neutral) 80% c h);
-  --neutral-4: oklch(from var(--neutral) 70% c h);
   --neutral-5: oklch(from var(--neutral) 60% c h);
-  --neutral-6: oklch(from var(--neutral) 50% c h);
   --neutral-7: oklch(from var(--neutral) 40% c h);
   --neutral-8: oklch(from var(--neutral) 30% c h);
   --neutral-9: oklch(from var(--neutral) 20% c h);
@@ -20,22 +24,23 @@
   --accent-green: oklch(56% 0.11 150);
   --accent-beige: oklch(75% 0.04 70);
 
-  --white: oklch(100% 0 0);
-  --black: oklch(0% 0 0);
   --transparent: oklch(0% 0 0 / 0);
-
   --content-background: oklch(100% 0 0 / 0.88);
   --backdrop-colour: oklch(0% 0 0 / 0.55);
+
+  /* Shadow colours */
 
   --shadow-light: oklch(0% 0 0 / 0.12);
   --shadow-medium: oklch(0% 0 0 / 0.18);
   --shadow-dark: oklch(0% 0 0 / 0.25);
   --text-shadow-colour: oklch(0% 0 0 / 0.15);
 
-  /* Layout variables */
+  /* Layout */
 
   --content-max-size: 56.25rem;
   --wide-content-max-size: 68.75rem;
+
+  /* Spacing */
 
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
@@ -44,19 +49,27 @@
   --space-xl: 1.5rem;
   --space-xxl: 2rem;
 
+  /* Border radius */
+
   --radius-small: 0.25rem;
   --radius-medium: 0.5rem;
   --radius-large: 0.625rem;
 
-  /* Animation variables */
+  /* Transitions */
 
   --button-transition: 0.25s ease;
-  --button-shadow: 0 0.4rem 0.9rem var(--shadow-medium);
   --nav-transition: 0.3s ease;
+
+  --button-shadow:
+    0 0.4rem 0.9rem var(--shadow-medium);
+
+  /* CSS animation timing */
 
   --logo-animation-duration: 1s;
   --filter-animation-duration: 4s;
   --blend-animation-duration: 5s;
+
+  /* SVG animation timing */
 
   --svg-animation-delay: 1s;
   --fan-animation-duration: 0.9s;
@@ -81,6 +94,8 @@
   --leaf-two-duration: 2.5s;
   --leaf-three-duration: 2.8s;
 
+  /* SVG showcase layout */
+
   --svg-radius: 0.75rem;
   --svg-spacing: clamp(0.75rem, 2vi, 1.5rem);
 
@@ -90,7 +105,9 @@
 }
 
 
-/* GLOBAL STYLES */
+/* ========================================
+   02. Global Styles
+======================================== */
 
 html {
   box-sizing: border-box;
@@ -122,11 +139,11 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-heading);
-  font-weight: 400;
-
   margin-block: 0;
   margin-inline: 0;
+
+  font-family: var(--font-heading);
+  font-weight: 400;
 }
 
 h1 {
@@ -151,8 +168,20 @@ a:hover {
   text-decoration: none;
 }
 
+.content-wrapper {
+  inline-size: 100%;
+  max-inline-size: var(--content-max-size);
 
-/* BUTTONS */
+  margin-inline: auto;
+
+  padding-block: var(--space-lg);
+  padding-inline: var(--space-lg);
+}
+
+
+/* ========================================
+   03. Buttons
+======================================== */
 
 .btn {
   display: inline-block;
@@ -188,6 +217,7 @@ a:hover {
   color: var(--neutral-1);
 
   transform: translateY(-0.1875rem);
+
   box-shadow: var(--button-shadow);
 }
 
@@ -202,283 +232,33 @@ a:hover {
 }
 
 
-/* CONTENT WRAPPER */
-
-.content-wrapper {
-  inline-size: 100%;
-  max-inline-size: var(--content-max-size);
-
-  margin-inline: auto;
-
-  padding-block: var(--space-lg);
-  padding-inline: var(--space-lg);
-}
-
-
-/* HOME PAGE */
-
-.home {
-  min-block-size: 100vb;
-
-  background:
-    url("../images/karam.jpg")
-    no-repeat center;
-
-  background-size: cover;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.home > .content-wrapper {
-  flex: 1 0 auto;
-  inline-size: 100%;
-
-  padding-block: 0.625rem;
-  padding-inline: 0.625rem;
-}
-
-.content-bg {
-  padding-block: var(--space-lg);
-  padding-inline: var(--space-lg);
-
-  background: var(--content-background);
-
-  border-radius: var(--radius-medium);
-}
-
-
-/* RESUME PAGE */
-
-.resume .page-header::before {
-  content: "";
-  display: block;
-
-  block-size: 12.5rem;
-
-  background:
-    url("../images/karam.jpg")
-    center / cover;
-}
-
-.resume h1 {
-  font-size: 3.125rem;
-}
-
-.resume h2 {
-  font-size: 1.625rem;
-}
-
-.resume-section {
-  margin-block-end: 3.125rem;
-}
-
-.resume-section > h2 {
-  border-block-end:
-    0.125rem dashed var(--neutral-3);
-
-  padding-block-end: 0.3125rem;
-}
-
-.download-link {
-  display: inline-block;
-  position: relative;
-
-  margin-block-start: var(--space-md);
-  margin-inline-start: var(--space-lg);
-
-  font-size: 0.9375rem;
-}
-
-
-/* PROJECT ITEMS */
-
-.project-item {
-  margin-block: 1.875rem;
-}
-
-.project-item img {
-  display: block;
-
-  inline-size: 100%;
-  block-size: auto;
-
-  margin-block-end: 0.625rem;
-
-  object-fit: cover;
-}
-
-
-/* WORK EXPERIENCE */
-
-.work-item {
-  margin-block: 1.875rem;
-}
-
-.work-details p {
-  margin-block: 0;
-  margin-inline: 0;
-}
-
-.work-summary p:first-child {
-  margin-block-start: 0;
-}
-
-
-/* EDUCATION */
-
-.education-item {
-  margin-block: 1.875rem;
-}
-
-.education-item p {
-  margin-block: 0;
-  margin-inline: 0;
-}
-
-
-/* FOOTER */
-
-footer {
-  background: var(--neutral-9);
-  color: var(--neutral-3);
-
-  display: flex;
-  flex-direction: column;
-
-  text-align: center;
-  justify-content: space-between;
-
-  padding-block: var(--space-md);
-  padding-inline: var(--space-lg);
-}
-
-footer a {
-  color: var(--accent-beige);
-}
-
-footer a:hover {
-  color: var(--accent-green);
-}
-
-.socials {
-  list-style: none;
-
-  padding-block: 0;
-  padding-inline: 0;
-}
-
-.socials li {
-  display: inline-block;
-
-  margin-inline: 0.3125rem;
-}
-
-.socials img {
-  inline-size: 2rem;
-  block-size: 2rem;
-
-  transition:
-    opacity var(--button-transition),
-    transform var(--button-transition);
-}
-
-.socials img:hover {
-  opacity: 0.6;
-  transform: translateY(-0.125rem);
-}
-
-
-/* PROJECTS PAGE GRID */
-
-.projects-page .project-wrapper {
-  display: grid;
-
-  grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: auto;
-
-  column-gap: var(--space-xl);
-  row-gap: 0;
-}
-
-.projects-page .project-item {
-  display: grid;
-
-  grid-row: span 3;
-  grid-template-rows: subgrid;
-
-  min-inline-size: 0;
-
-  margin-block: 0 var(--space-xl);
-  margin-inline: 0;
-
-  padding-block: var(--space-md);
-  padding-inline: var(--space-md);
-
-  background: var(--neutral-2);
-
-  border-radius: var(--radius-medium);
-}
-
-.projects-page .project-item img {
-  display: block;
-  grid-row: 1;
-
-  inline-size: 100%;
-  block-size: 10rem;
-
-  object-fit: cover;
-
-  margin-block: 0;
-  margin-inline: 0;
-}
-
-.projects-page .project-item h3 {
-  grid-row: 2;
-
-  margin-block: 0;
-  margin-inline: 0;
-}
-
-.projects-page .project-item p {
-  grid-row: 3;
-
-  margin-block: 0;
-  margin-inline: 0;
-}
-
-.projects-page .project-item:not(:has(img)) h3 {
-  grid-row: 2;
-}
-
-.projects-page .project-item:not(:has(img)) p {
-  grid-row: 3;
-}
-
-
-/* NAVIGATION */
+/* ========================================
+   04. Site Navigation
+======================================== */
 
 .site-nav {
-  background: var(--neutral-2);
-
   position: relative;
   z-index: 10;
+
+  background: var(--neutral-2);
 }
 
 .nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: space-between;
+
   max-inline-size: var(--wide-content-max-size);
 
   margin-inline: auto;
 
   padding-block: 0.9375rem;
   padding-inline: var(--space-lg);
-
-  display: flex;
-  flex-wrap: wrap;
-
-  align-items: center;
-  justify-content: space-between;
 }
+
+/* Site logo */
 
 .site-logo {
   display: inline-block;
@@ -491,6 +271,7 @@ footer a:hover {
   line-height: 1;
 
   text-decoration: none;
+
   transform-origin: center;
 
   animation:
@@ -504,35 +285,6 @@ footer a:hover {
     text-shadow var(--nav-transition);
 }
 
-@keyframes logoEntrance {
-  0% {
-    opacity: 0;
-
-    transform:
-      translateY(-1rem)
-      scale(0.6)
-      rotate(-15deg);
-  }
-
-  60% {
-    opacity: 1;
-
-    transform:
-      translateY(0.125rem)
-      scale(1.1)
-      rotate(5deg);
-  }
-
-  100% {
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1)
-      rotate(0);
-  }
-}
-
 .site-logo:hover {
   color: var(--neutral-8);
 
@@ -543,29 +295,36 @@ footer a:hover {
     var(--text-shadow-colour);
 }
 
-.site-logo:focus-visible {
+.site-logo:focus-visible,
+.nav-links a:focus-visible {
   outline: 0.1875rem solid var(--accent-green);
   outline-offset: 0.25rem;
 }
 
+.site-logo.nav-active {
+  text-decoration: underline;
+  text-underline-offset: 0.3125rem;
+}
+
+/* Mobile navigation toggle */
+
 .nav-toggle {
   position: absolute;
-
-  inline-size: 2.75rem;
-  block-size: 2.75rem;
 
   inset-inline-end: var(--space-lg);
   inset-block-start: 0.625rem;
 
   opacity: 0;
-
   cursor: pointer;
 }
 
+.nav-toggle,
 .nav-toggle-label {
   inline-size: 2.75rem;
   block-size: 2.75rem;
+}
 
+.nav-toggle-label {
   display: flex;
 
   align-items: center;
@@ -579,14 +338,14 @@ footer a:hover {
 .nav-toggle-label span::after {
   display: block;
 
-  background: var(--accent-green);
+  position: relative;
 
   inline-size: 1.625rem;
   block-size: 0.1875rem;
 
-  border-radius: 0.125rem;
+  background: var(--accent-green);
 
-  position: relative;
+  border-radius: 0.125rem;
 
   transition: transform 0.2s ease;
 }
@@ -596,6 +355,7 @@ footer a:hover {
   content: "";
 
   position: absolute;
+
   inset-inline-start: 0;
 }
 
@@ -607,6 +367,28 @@ footer a:hover {
   inset-block-start: 0.5rem;
 }
 
+.nav-toggle:checked ~ .nav-links {
+  display: flex;
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+  background: var(--transparent);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+  inset-block-start: 0;
+
+  transform: rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+  inset-block-start: 0;
+
+  transform: rotate(-45deg);
+}
+
+/* Navigation links */
+
 .nav-links {
   display: none;
 
@@ -617,15 +399,11 @@ footer a:hover {
 
   list-style: none;
 
-  padding-block: 0.9375rem 0;
-  padding-inline: 0;
-
   margin-block: 0;
   margin-inline: 0;
-}
 
-.nav-links li {
-  list-style: none;
+  padding-block: 0.9375rem 0;
+  padding-inline: 0;
 }
 
 .nav-links a {
@@ -633,13 +411,14 @@ footer a:hover {
 
   position: relative;
 
-  color: var(--neutral-9);
-
-  text-decoration: none;
-  font-weight: 600;
-
   padding-block: 0.375rem;
   padding-inline: 0;
+
+  color: var(--neutral-9);
+
+  font-weight: 600;
+
+  text-decoration: none;
 
   transition:
     color var(--nav-transition),
@@ -676,11 +455,6 @@ footer a:hover {
   transform: scaleX(1);
 }
 
-.nav-links a:focus-visible {
-  outline: 0.1875rem solid var(--accent-green);
-  outline-offset: 0.25rem;
-}
-
 .nav-links .nav-active {
   color: var(--accent-green);
 
@@ -696,38 +470,21 @@ footer a:hover {
   transform: scaleX(1);
 }
 
-.nav-toggle:checked ~ .nav-links {
-  display: flex;
-}
-
-.nav-toggle:checked + .nav-toggle-label span {
-  background: var(--transparent);
-}
-
-.nav-toggle:checked + .nav-toggle-label span::before {
-  inset-block-start: 0;
-
-  transform: rotate(45deg);
-}
-
-.nav-toggle:checked + .nav-toggle-label span::after {
-  inset-block-start: 0;
-
-  transform: rotate(-45deg);
-}
+/* Contact navigation button */
 
 .nav-links .nav-contact {
-  background: var(--accent-green);
-  color: var(--neutral-1);
-
   padding-block: 0.625rem;
   padding-inline: 0.9375rem;
 
+  background: var(--accent-green);
+  color: var(--neutral-1);
+
   border-radius: var(--radius-small);
 
-  text-transform: uppercase;
   font-size: 0.875rem;
   letter-spacing: 0.1em;
+
+  text-transform: uppercase;
 }
 
 .nav-links .nav-contact:hover {
@@ -735,22 +492,50 @@ footer a:hover {
   color: var(--neutral-1);
 }
 
-.site-logo.nav-active {
-  text-decoration: underline;
-  text-underline-offset: 0.3125rem;
+/* Logo animation */
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(-1rem)
+      scale(0.6)
+      rotate(-15deg);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform:
+      translateY(0.125rem)
+      scale(1.1)
+      rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(0);
+  }
 }
 
 
-/* CONTACT POPOVER */
+/* ========================================
+   05. Contact Popover
+======================================== */
 
 .contact-btn {
   font-family: var(--font-body);
   font-weight: 600;
+  line-height: 1;
 
   border: none;
 
   cursor: pointer;
-  line-height: 1;
 
   anchor-name: --contact-button;
 }
@@ -919,7 +704,6 @@ footer a:hover {
 
 .contact-close:active {
   transform: translateY(0);
-
   box-shadow: none;
 }
 
@@ -927,6 +711,8 @@ footer a:hover {
   outline: 0.1875rem solid var(--accent-beige);
   outline-offset: 0.1875rem;
 }
+
+/* Popover container queries */
 
 @container (min-width: 24rem) {
   .contact-card {
@@ -961,10 +747,6 @@ footer a:hover {
 
 @container (min-width: 28rem) {
   .contact-card {
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(0, 2fr);
-
     gap: var(--space-lg);
   }
 
@@ -974,7 +756,215 @@ footer a:hover {
 }
 
 
-/* CSS ANIMATION SHOWCASE */
+/* ========================================
+   06. Home Page
+======================================== */
+
+.home {
+  display: flex;
+  flex-direction: column;
+
+  min-block-size: 100vb;
+
+  background:
+    url("../images/karam.jpg")
+    no-repeat center / cover;
+}
+
+.home > .content-wrapper {
+  flex: 1 0 auto;
+
+  inline-size: 100%;
+
+  padding-block: 0.625rem;
+  padding-inline: 0.625rem;
+}
+
+.content-bg {
+  padding-block: var(--space-lg);
+  padding-inline: var(--space-lg);
+
+  background: var(--content-background);
+
+  border-radius: var(--radius-medium);
+}
+
+
+/* ========================================
+   07. Resume Page
+======================================== */
+
+.resume .page-header::before {
+  content: "";
+
+  display: block;
+
+  block-size: 12.5rem;
+
+  background:
+    url("../images/karam.jpg")
+    center / cover;
+}
+
+.resume h1 {
+  font-size: 3.125rem;
+}
+
+.resume h2 {
+  font-size: 1.625rem;
+}
+
+.resume-section {
+  margin-block-end: 3.125rem;
+}
+
+.resume-section > h2 {
+  padding-block-end: 0.3125rem;
+
+  border-block-end:
+    0.125rem dashed var(--neutral-3);
+}
+
+.download-link {
+  display: inline-block;
+
+  position: relative;
+
+  margin-block-start: var(--space-md);
+  margin-inline-start: var(--space-lg);
+
+  font-size: 0.9375rem;
+}
+
+/* Work experience and education */
+
+.work-item,
+.education-item {
+  margin-block: 1.875rem;
+}
+
+.work-details p,
+.education-item p {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.work-summary p:first-child {
+  margin-block-start: 0;
+}
+
+
+/* ========================================
+   08. Projects Page
+======================================== */
+
+.project-item {
+  margin-block: 1.875rem;
+}
+
+.project-item img {
+  display: block;
+
+  inline-size: 100%;
+  block-size: auto;
+
+  margin-block-end: 0.625rem;
+
+  object-fit: cover;
+}
+
+.projects-page .project-wrapper {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr);
+
+  column-gap: var(--space-xl);
+  row-gap: 0;
+}
+
+.projects-page .project-item {
+  display: grid;
+
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+
+  min-inline-size: 0;
+
+  margin-block: 0 var(--space-xl);
+  margin-inline: 0;
+
+  padding-block: var(--space-md);
+  padding-inline: var(--space-md);
+
+  background: var(--neutral-2);
+
+  border-radius: var(--radius-medium);
+}
+
+/* Project images */
+
+.projects-page .project-item > a {
+  display: block;
+
+  grid-row: 1;
+
+  min-inline-size: 0;
+}
+
+.projects-page .project-item img {
+  grid-row: 1;
+
+  block-size: 10rem;
+
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.projects-page .project-item img[src$="svg-showcase.png"] {
+  object-fit: contain;
+
+  background: var(--neutral-1);
+}
+
+/* Project titles and descriptions */
+
+.projects-page .project-item h3 {
+  grid-row: 2;
+
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.projects-page .project-item p,
+.projects-page .project-description {
+  grid-row: 3;
+}
+
+.projects-page .project-item p {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.projects-page .project-description {
+  min-inline-size: 0;
+}
+
+.projects-page .project-description br {
+  display: none;
+}
+
+.projects-page .project-description .btn {
+  margin-block-start: var(--space-md);
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+
+/* ========================================
+   09. CSS Animation Showcase
+======================================== */
 
 .animations-page .animation-grid {
   display: grid;
@@ -1006,9 +996,9 @@ footer a:hover {
 }
 
 .animations-page .animation-technique {
-  font-weight: 700;
-
   color: var(--accent-green);
+
+  font-weight: 700;
 }
 
 .animations-page .animation-back {
@@ -1033,14 +1023,16 @@ footer a:hover {
   border-radius: var(--radius-large);
 }
 
+/* Clip-path animation */
 
-/* CLIP-PATH ANIMATION */
-
-.animations-page .clip-shape {
+.animations-page .clip-shape,
+.animations-page .filter-shape {
   inline-size: 55%;
 
   aspect-ratio: 1 / 1;
+}
 
+.animations-page .clip-shape {
   background: var(--accent-green);
 
   animation:
@@ -1048,6 +1040,83 @@ footer a:hover {
     3.5s ease-in-out
     infinite alternate;
 }
+
+/* Filter animation */
+
+.animations-page .filter-stage,
+.animations-page .blend-stage {
+  background: radial-gradient(
+    circle,
+    var(--neutral-1),
+    var(--neutral-2)
+  );
+}
+
+.animations-page .filter-shape {
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 35% 30%,
+    var(--accent-beige),
+    var(--accent-green) 55%,
+    var(--neutral-8)
+  );
+
+  box-shadow:
+    0 0 1rem var(--shadow-light);
+
+  animation:
+    filterPulse
+    var(--filter-animation-duration)
+    ease-in-out infinite alternate;
+}
+
+/* Blend mode animation */
+
+.animations-page .blend-shape {
+  position: absolute;
+
+  inline-size: 38%;
+
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+
+  opacity: 0.85;
+
+  mix-blend-mode: multiply;
+
+  will-change: transform;
+}
+
+.animations-page .blend-one {
+  background: var(--accent-green);
+
+  animation:
+    blendMoveOne
+    var(--blend-animation-duration)
+    ease-in-out infinite alternate;
+}
+
+.animations-page .blend-two {
+  background: var(--accent-beige);
+
+  animation:
+    blendMoveTwo
+    var(--blend-animation-duration)
+    ease-in-out infinite alternate;
+}
+
+.animations-page .blend-three {
+  background: var(--neutral-5);
+
+  animation:
+    blendMoveThree
+    var(--blend-animation-duration)
+    ease-in-out infinite alternate;
+}
+
+/* Clip-path keyframes */
 
 @keyframes morphClip {
   0% {
@@ -1083,39 +1152,7 @@ footer a:hover {
   }
 }
 
-
-/* FILTER ANIMATION */
-
-.animations-page .filter-stage {
-  background: radial-gradient(
-    circle,
-    var(--neutral-1),
-    var(--neutral-2)
-  );
-}
-
-.animations-page .filter-shape {
-  inline-size: 55%;
-
-  aspect-ratio: 1 / 1;
-
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle at 35% 30%,
-    var(--accent-beige),
-    var(--accent-green) 55%,
-    var(--neutral-8)
-  );
-
-  box-shadow:
-    0 0 1rem var(--shadow-light);
-
-  animation:
-    filterPulse
-    var(--filter-animation-duration)
-    ease-in-out infinite alternate;
-}
+/* Filter keyframes */
 
 @keyframes filterPulse {
   0% {
@@ -1169,64 +1206,7 @@ footer a:hover {
   }
 }
 
-
-/* BLEND MODE ANIMATION */
-
-.animations-page .blend-stage {
-  position: relative;
-
-  isolation: isolate;
-  overflow: hidden;
-
-  background: radial-gradient(
-    circle,
-    var(--neutral-1),
-    var(--neutral-2)
-  );
-}
-
-.animations-page .blend-shape {
-  position: absolute;
-
-  inline-size: 38%;
-
-  aspect-ratio: 1 / 1;
-
-  border-radius: 50%;
-
-  opacity: 0.85;
-
-  mix-blend-mode: multiply;
-
-  will-change: transform;
-}
-
-.animations-page .blend-one {
-  background: var(--accent-green);
-
-  animation:
-    blendMoveOne
-    var(--blend-animation-duration)
-    ease-in-out infinite alternate;
-}
-
-.animations-page .blend-two {
-  background: var(--accent-beige);
-
-  animation:
-    blendMoveTwo
-    var(--blend-animation-duration)
-    ease-in-out infinite alternate;
-}
-
-.animations-page .blend-three {
-  background: var(--neutral-5);
-
-  animation:
-    blendMoveThree
-    var(--blend-animation-duration)
-    ease-in-out infinite alternate;
-}
+/* Blend mode keyframes */
 
 @keyframes blendMoveOne {
   0% {
@@ -1271,18 +1251,22 @@ footer a:hover {
 }
 
 
-/* SVG SHOWCASE PAGE */
+/* ========================================
+   10. SVG Showcase Page
+======================================== */
 
 .svg-page {
-  min-block-size: 100vb;
-
   display: flex;
   flex-direction: column;
+
+  min-block-size: 100vb;
 }
 
 .svg-page main {
   flex: 1 0 auto;
 }
+
+/* SVG page header */
 
 .svg-page .page-header::before {
   display: none;
@@ -1303,17 +1287,18 @@ footer a:hover {
   color: var(--neutral-9);
 
   font-size: clamp(2.5rem, 6vi, 4.375rem);
-
   line-height: 1.1;
 }
 
 .svg-page .page-header h2 {
+  margin-block-start: var(--space-xs);
+
   color: var(--accent-green);
 
   font-size: clamp(1.5rem, 3vi, 2.25rem);
-
-  margin-block-start: var(--space-xs);
 }
+
+/* SVG page content */
 
 .svg-page main.content-wrapper {
   padding-block: clamp(1.5rem, 4vi, 2.5rem);
@@ -1331,6 +1316,8 @@ footer a:hover {
   min-inline-size: 0;
 }
 
+/* SVG illustration */
+
 .svg-page .svg-figure {
   display: flex;
   flex-direction: column;
@@ -1346,7 +1333,6 @@ footer a:hover {
   background: var(--neutral-2);
 
   border: 0.0625rem solid var(--neutral-3);
-
   border-radius: var(--svg-radius);
 
   box-shadow: var(--svg-shadow);
@@ -1367,17 +1353,18 @@ footer a:hover {
 }
 
 .svg-page .svg-figure figcaption {
-  font-size: 0.875rem;
-  font-style: italic;
+  padding-inline: var(--space-xs);
 
   color: var(--neutral-7);
 
+  font-size: 0.875rem;
+  font-style: italic;
   line-height: 1.6;
 
   text-align: center;
-
-  padding-inline: var(--space-xs);
 }
+
+/* Animation techniques list */
 
 .svg-page main .resume-section ul {
   display: grid;
@@ -1386,10 +1373,10 @@ footer a:hover {
 
   gap: 0.625rem;
 
+  margin-block: var(--space-md);
+
   padding-block: 0;
   padding-inline: 0;
-
-  margin-block: var(--space-md);
 
   list-style: none;
 }
@@ -1424,71 +1411,58 @@ footer a:hover {
   border-radius: 50%;
 }
 
-.svg-page .svg-back {
-  margin-block-start: var(--space-xl);
+/* Back to projects button */
 
+.svg-page .svg-back {
   display: flex;
 
   justify-content: flex-start;
+
+  margin-block-start: var(--space-xl);
 }
 
 .svg-page .svg-back .btn {
   inline-size: 100%;
 
-  text-align: center;
-  line-height: 1.4;
-
   padding-block: 0.875rem;
   padding-inline: var(--space-lg);
+
+  line-height: 1.4;
+
+  text-align: center;
 }
 
 
-/* SVG FAN ANIMATION */
+/* ========================================
+   11. SVG Animations
+======================================== */
+
+/* Fan rotation */
 
 .svg-page #fan-blades {
   transform-box: view-box;
 
   transform-origin: 23.125% 31%;
 
-  animation-name: spinFan;
-
-  animation-duration:
-    var(--fan-animation-duration);
-
-  animation-timing-function: linear;
-
-  animation-delay:
-    var(--svg-animation-delay);
-
-  animation-iteration-count: infinite;
+  animation:
+    spinFan
+    var(--fan-animation-duration)
+    linear
+    var(--svg-animation-delay)
+    infinite;
 }
 
-@keyframes spinFan {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-/* SVG AIRFLOW ANIMATION */
+/* Airflow */
 
 .svg-page #wind-one,
 .svg-page #wind-two,
 .svg-page #wind-three {
   opacity: 0;
 
-  animation-name: moveAirflow;
-
-  animation-duration:
-    var(--airflow-duration);
-
-  animation-timing-function: linear;
-
-  animation-iteration-count: infinite;
+  animation:
+    moveAirflow
+    var(--airflow-duration)
+    linear infinite;
 }
 
 .svg-page #wind-one {
@@ -1514,24 +1488,16 @@ footer a:hover {
   );
 }
 
-@keyframes moveAirflow {
-  0% {
-    stroke-dashoffset: 0;
-    opacity: 0.3;
-  }
+/* Notebook pages */
 
-  50% {
-    opacity: 1;
-  }
+.svg-page #notebook-page-one,
+.svg-page #notebook-page-two {
+  animation-timing-function: ease-in-out;
 
-  100% {
-    stroke-dashoffset: -40;
-    opacity: 0.3;
-  }
+  animation-iteration-count: infinite;
+
+  animation-direction: alternate;
 }
-
-
-/* SVG NOTEBOOK ANIMATION */
 
 .svg-page #notebook-page-one {
   animation-name: flutterPageOne;
@@ -1539,16 +1505,10 @@ footer a:hover {
   animation-duration:
     var(--page-one-duration);
 
-  animation-timing-function: ease-in-out;
-
   animation-delay: calc(
     var(--svg-animation-delay) +
     var(--notebook-delay)
   );
-
-  animation-iteration-count: infinite;
-
-  animation-direction: alternate;
 }
 
 .svg-page #notebook-page-two {
@@ -1557,54 +1517,23 @@ footer a:hover {
   animation-duration:
     var(--page-two-duration);
 
-  animation-timing-function: ease-in-out;
-
   animation-delay: calc(
     var(--svg-animation-delay) +
     var(--notebook-delay) +
     var(--notebook-stagger)
   );
-
-  animation-iteration-count: infinite;
-
-  animation-direction: alternate;
 }
 
-@keyframes flutterPageOne {
-  from {
-    d: path("M410 346 L410 290 Q470 242 505 280 L505 320 Z");
-  }
-
-  to {
-    d: path("M410 346 L410 290 Q470 220 500 260 L500 310 Z");
-  }
-}
-
-@keyframes flutterPageTwo {
-  from {
-    d: path("M410 346 L410 290 Q445 215 485 240 Q470 284 505 320 Z");
-  }
-
-  to {
-    d: path("M410 346 L410 290 Q440 185 480 215 Q455 265 498 305 Z");
-  }
-}
-
-
-/* SVG COFFEE STEAM ANIMATION */
+/* Coffee steam */
 
 .svg-page #steam-one,
 .svg-page #steam-two {
   opacity: 0;
 
-  animation-name: riseSteam;
-
-  animation-duration:
-    var(--steam-duration);
-
-  animation-timing-function: ease-out;
-
-  animation-iteration-count: infinite;
+  animation:
+    riseSteam
+    var(--steam-duration)
+    ease-out infinite;
 }
 
 .svg-page #steam-one {
@@ -1622,26 +1551,7 @@ footer a:hover {
   );
 }
 
-@keyframes riseSteam {
-  0% {
-    opacity: 0;
-
-    transform: translate(0, 6px);
-  }
-
-  35% {
-    opacity: 0.9;
-  }
-
-  100% {
-    opacity: 0;
-
-    transform: translate(8px, -24px);
-  }
-}
-
-
-/* SVG PLANT ANIMATION */
+/* Plant leaves */
 
 .svg-page #plant-leaf-one,
 .svg-page #plant-leaf-two,
@@ -1691,6 +1601,80 @@ footer a:hover {
   );
 }
 
+/* Fan keyframes */
+
+@keyframes spinFan {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Airflow keyframes */
+
+@keyframes moveAirflow {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -40;
+    opacity: 0.3;
+  }
+}
+
+/* Notebook keyframes */
+
+@keyframes flutterPageOne {
+  from {
+    d: path("M410 346 L410 290 Q470 242 505 280 L505 320 Z");
+  }
+
+  to {
+    d: path("M410 346 L410 290 Q470 220 500 260 L500 310 Z");
+  }
+}
+
+@keyframes flutterPageTwo {
+  from {
+    d: path("M410 346 L410 290 Q445 215 485 240 Q470 284 505 320 Z");
+  }
+
+  to {
+    d: path("M410 346 L410 290 Q440 185 480 215 Q455 265 498 305 Z");
+  }
+}
+
+/* Steam keyframes */
+
+@keyframes riseSteam {
+  0% {
+    opacity: 0;
+
+    transform: translate(0, 6px);
+  }
+
+  35% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translate(8px, -24px);
+  }
+}
+
+/* Plant keyframes */
+
 @keyframes swayLeaves {
   0% {
     transform: rotate(-3deg);
@@ -1706,7 +1690,69 @@ footer a:hover {
 }
 
 
-/* RESPONSIVE STYLES */
+/* ========================================
+   12. Footer
+======================================== */
+
+footer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding-block: var(--space-md);
+  padding-inline: var(--space-lg);
+
+  background: var(--neutral-9);
+  color: var(--neutral-3);
+
+  text-align: center;
+}
+
+footer a {
+  color: var(--accent-beige);
+}
+
+footer a:hover {
+  color: var(--accent-green);
+}
+
+/* Social media icons */
+
+.socials {
+  padding-block: 0;
+  padding-inline: 0;
+
+  list-style: none;
+}
+
+.socials li {
+  display: inline-block;
+
+  margin-inline: 0.3125rem;
+}
+
+.socials img {
+  inline-size: 2rem;
+  block-size: 2rem;
+
+  transition:
+    opacity var(--button-transition),
+    transform var(--button-transition);
+}
+
+.socials img:hover {
+  opacity: 0.6;
+
+  transform: translateY(-0.125rem);
+}
+
+
+/* ========================================
+   13. Responsive Styles
+======================================== */
+
+/* Small tablets */
 
 @media screen and (min-width: 31.25rem) {
   .home > .content-wrapper {
@@ -1729,7 +1775,13 @@ footer a:hover {
   .project-item img {
     inline-size: 18.75rem;
   }
+
+  .projects-page .project-item img {
+    inline-size: 100%;
+  }
 }
+
+/* Two-column projects layout */
 
 @media screen and (min-width: 37.5rem) {
   .projects-page .project-wrapper {
@@ -1758,13 +1810,14 @@ footer a:hover {
   }
 }
 
+/* Desktop navigation and animation layouts */
+
 @media screen and (min-width: 48rem) {
   .nav-inner {
     flex-wrap: nowrap;
 
     gap: var(--space-xxl);
 
-    padding-block: 0.9375rem;
     padding-inline: 1.875rem;
   }
 
@@ -1788,21 +1841,15 @@ footer a:hover {
 
     gap: 2.5rem;
 
-    padding-block: 0;
-    padding-inline: 0;
-
     margin-block: 0;
     margin-inline: auto 0;
+
+    padding-block: 0;
+    padding-inline: 0;
   }
 
   .nav-links a {
     padding-block: 0.3125rem;
-    padding-inline: 0;
-  }
-
-  .nav-links .nav-contact {
-    padding-block: 0.625rem;
-    padding-inline: 0.9375rem;
   }
 
   .animations-page .animation-grid {
@@ -1815,6 +1862,8 @@ footer a:hover {
       repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Work experience and footer layout */
 
 @media screen and (min-width: 53.75rem) {
   .work-item {
@@ -1839,6 +1888,8 @@ footer a:hover {
   }
 }
 
+/* Three-column projects layout */
+
 @media screen and (min-width: 56.25rem) {
   .projects-page .content-wrapper {
     max-inline-size: var(--wide-content-max-size);
@@ -1851,9 +1902,13 @@ footer a:hover {
 }
 
 
-/* REDUCED MOTION */
+/* ========================================
+   14. Reduced Motion
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
+  /* Disable animated transitions */
 
   .btn,
   .contact-close,
@@ -1871,6 +1926,8 @@ footer a:hover {
     scroll-behavior: auto;
   }
 
+  /* Disable logo animation */
+
   .site-logo {
     animation: none;
 
@@ -1878,6 +1935,8 @@ footer a:hover {
 
     transform: none;
   }
+
+  /* Remove movement on hover */
 
   .btn:hover,
   .contact-close:hover,
@@ -1887,9 +1946,15 @@ footer a:hover {
     transform: none;
   }
 
-  .animations-page .clip-shape {
-    animation: none;
+  /* Disable CSS showcase animations */
 
+  .animations-page .clip-shape,
+  .animations-page .filter-shape,
+  .animations-page .blend-shape {
+    animation: none;
+  }
+
+  .animations-page .clip-shape {
     clip-path: polygon(
       50% 0%,
       100% 50%,
@@ -1901,15 +1966,12 @@ footer a:hover {
   }
 
   .animations-page .filter-shape {
-    animation: none;
-
     filter: none;
+
     transform: none;
   }
 
   .animations-page .blend-shape {
-    animation: none;
-
     will-change: auto;
   }
 
@@ -1925,6 +1987,8 @@ footer a:hover {
     transform: translateY(35%);
   }
 
+  /* Disable SVG animations */
+
   .svg-page .study-desk,
   .svg-page .study-desk * {
     animation: none;
@@ -1932,75 +1996,35 @@ footer a:hover {
     transition: none;
   }
 
-  .svg-page #fan-blades {
-    transform: none;
-  }
+  /* Keep SVG elements visible and stationary */
 
-  .svg-page #wind-one,
-  .svg-page #wind-two,
-  .svg-page #wind-three {
-    opacity: 1;
-
-    stroke-dashoffset: 0;
-  }
-
+  .svg-page #fan-blades,
   .svg-page #notebook-page-one,
-  .svg-page #notebook-page-two {
-    transform: none;
-
-    d: revert;
-  }
-
+  .svg-page #notebook-page-two,
   .svg-page #steam-one,
-  .svg-page #steam-two {
-    opacity: 1;
-
-    transform: none;
-  }
-
+  .svg-page #steam-two,
   .svg-page #plant-leaf-one,
   .svg-page #plant-leaf-two,
   .svg-page #plant-leaf-three {
     transform: none;
   }
-}
 
+  .svg-page #wind-one,
+  .svg-page #wind-two,
+  .svg-page #wind-three,
+  .svg-page #steam-one,
+  .svg-page #steam-two {
+    opacity: 1;
+  }
 
-/* SVG PROJECT CARD */
+  .svg-page #wind-one,
+  .svg-page #wind-two,
+  .svg-page #wind-three {
+    stroke-dashoffset: 0;
+  }
 
-.projects-page .project-item > a {
-  display: block;
-
-  grid-row: 1;
-
-  min-inline-size: 0;
-}
-
-.projects-page .project-description {
-  grid-row: 3;
-
-  min-inline-size: 0;
-}
-
-.projects-page .project-description p {
-  margin-block: 0;
-  margin-inline: 0;
-}
-
-.projects-page .project-description br {
-  display: none;
-}
-
-.projects-page .project-description .btn {
-  margin-block-start: var(--space-md);
-
-  line-height: 1.4;
-
-  text-align: center;
-}
-
-.projects-page .project-item img[src$="svg-showcase.png"] {
-  object-fit: contain;
-
-  background: var(--neutral-1);
+  .svg-page #notebook-page-one,
+  .svg-page #notebook-page-two {
+    d: revert;
+  }
 }
