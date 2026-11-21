@@ -39,6 +39,10 @@
   --page-two-duration: 1.3s;
   --notebook-delay: 0.8s;
   --notebook-stagger: 0.3s;
+
+  --steam-duration: 2.4s;
+  --steam-delay: 1.3s;
+  --steam-stagger: 0.6s;
 }
 
 
@@ -1273,6 +1277,50 @@ footer a:hover {
 }
 
 
+/* SVG COFFEE STEAM ANIMATION */
+
+.svg-page #steam-one,
+.svg-page #steam-two {
+  opacity: 0;
+
+  animation-name: riseSteam;
+  animation-duration: var(--steam-duration);
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+.svg-page #steam-one {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--steam-delay)
+  );
+}
+
+.svg-page #steam-two {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--steam-delay) +
+    var(--steam-stagger)
+  );
+}
+
+@keyframes riseSteam {
+  0% {
+    opacity: 0;
+    transform: translate(0, 6px);
+  }
+
+  35% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(8px, -24px);
+  }
+}
+
+
 /* RESPONSIVE STYLES */
 
 @media screen and (min-width: 31.25rem) {
@@ -1482,5 +1530,12 @@ footer a:hover {
   .svg-page #notebook-page-one,
   .svg-page #notebook-page-two {
     animation: none;
+  }
+
+  .svg-page #steam-one,
+  .svg-page #steam-two {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
