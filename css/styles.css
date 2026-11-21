@@ -20,8 +20,22 @@
   --accent-green: oklch(56% 0.11 150);
   --accent-beige: oklch(75% 0.04 70);
 
+  /* Additional colour variables */
+
+  --white: oklch(100% 0 0);
+  --black: oklch(0% 0 0);
+  --transparent: oklch(0% 0 0 / 0);
+
+  --content-background: oklch(100% 0 0 / 0.88);
+  --backdrop-colour: oklch(0% 0 0 / 0.55);
+
+  --shadow-light: oklch(0% 0 0 / 0.12);
+  --shadow-medium: oklch(0% 0 0 / 0.18);
+  --shadow-dark: oklch(0% 0 0 / 0.25);
+  --text-shadow-colour: oklch(0% 0 0 / 0.15);
+
   --button-transition: 0.25s ease;
-  --button-shadow: 0 0.4rem 0.9rem rgb(0 0 0 / 0.18);
+  --button-shadow: 0 0.4rem 0.9rem var(--shadow-medium);
   --nav-transition: 0.3s ease;
 
   --logo-animation-duration: 1s;
@@ -193,7 +207,7 @@ a:hover {
 
 .content-bg {
   padding: 1.25rem;
-  background: rgb(255 255 255 / 0.88);
+  background: var(--content-background);
   border-radius: 0.5rem;
 }
 
@@ -471,7 +485,7 @@ footer a:hover {
 
   text-shadow:
     0.125rem 0.125rem 0.25rem
-    rgb(0 0 0 / 0.15);
+    var(--text-shadow-colour);
 }
 
 .site-logo:focus-visible {
@@ -622,7 +636,7 @@ footer a:hover {
 }
 
 .nav-toggle:checked + .nav-toggle-label span {
-  background: transparent;
+  background: var(--transparent);
 }
 
 .nav-toggle:checked + .nav-toggle-label span::before {
@@ -718,11 +732,11 @@ footer a:hover {
 
   box-shadow:
     0 0.75rem 2.1875rem
-    rgb(0 0 0 / 0.25);
+    var(--shadow-dark);
 }
 
 #contact-popover::backdrop {
-  background: rgb(0 0 0 / 0.55);
+  background: var(--backdrop-colour);
 }
 
 .contact-card {
@@ -1000,7 +1014,7 @@ footer a:hover {
     var(--neutral-8)
   );
 
-  box-shadow: 0 0 1rem rgb(0 0 0 / 0.12);
+  box-shadow: 0 0 1rem var(--shadow-light);
 
   animation:
     filterPulse
@@ -1710,13 +1724,11 @@ footer a:hover {
     transition: none;
   }
 
-
   /* Disable smooth scrolling */
 
   html {
     scroll-behavior: auto;
   }
-
 
   /* Navigation logo */
 
@@ -1725,7 +1737,6 @@ footer a:hover {
     opacity: 1;
     transform: none;
   }
-
 
   /* Remove movement on hover */
 
@@ -1736,7 +1747,6 @@ footer a:hover {
   .nav-links a:hover {
     transform: none;
   }
-
 
   /* CSS clip-path animation */
 
@@ -1753,7 +1763,6 @@ footer a:hover {
     transform: none;
   }
 
-
   /* CSS filter animation */
 
   .animations-page .filter-shape {
@@ -1761,7 +1770,6 @@ footer a:hover {
     filter: none;
     transform: none;
   }
-
 
   /* CSS blend mode animation */
 
@@ -1782,8 +1790,7 @@ footer a:hover {
     transform: translateY(35%);
   }
 
-
-  /* Disable all SVG animations */
+  /* Disable SVG animations */
 
   .svg-page .study-desk,
   .svg-page .study-desk * {
@@ -1791,15 +1798,9 @@ footer a:hover {
     transition: none;
   }
 
-
-  /* Keep the fan in its original position */
-
   .svg-page #fan-blades {
     transform: none;
   }
-
-
-  /* Keep all three airflow paths visible */
 
   .svg-page #wind-one,
   .svg-page #wind-two,
@@ -1808,17 +1809,11 @@ footer a:hover {
     stroke-dashoffset: 0;
   }
 
-
-  /* Restore original notebook pages */
-
   .svg-page #notebook-page-one,
   .svg-page #notebook-page-two {
     transform: none;
     d: revert;
   }
-
-
-  /* Keep coffee steam visible */
 
   .svg-page #steam-one,
   .svg-page #steam-two {
@@ -1826,14 +1821,13 @@ footer a:hover {
     transform: none;
   }
 
-
-  /* Restore original plant positions */
-
   .svg-page #plant-leaf-one,
   .svg-page #plant-leaf-two,
   .svg-page #plant-leaf-three {
     transform: none;
   }
+}
+
 
 /* SVG PROJECT CARD */
 
@@ -1866,6 +1860,3 @@ footer a:hover {
   object-fit: contain;
   background: var(--neutral-1);
 }
-
-}
-
