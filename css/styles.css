@@ -1695,20 +1695,39 @@ footer a:hover {
 /* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
+
+  /* Disable animated transitions */
+
   .btn,
   .contact-close,
   .socials img,
   .site-logo,
   .nav-links a,
-  .nav-links a::after {
+  .nav-links a::after,
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
     transition: none;
   }
+
+
+  /* Disable smooth scrolling */
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  /* Navigation logo */
 
   .site-logo {
     animation: none;
     opacity: 1;
     transform: none;
   }
+
+
+  /* Remove movement on hover */
 
   .btn:hover,
   .contact-close:hover,
@@ -1717,6 +1736,9 @@ footer a:hover {
   .nav-links a:hover {
     transform: none;
   }
+
+
+  /* CSS clip-path animation */
 
   .animations-page .clip-shape {
     animation: none;
@@ -1731,11 +1753,17 @@ footer a:hover {
     transform: none;
   }
 
+
+  /* CSS filter animation */
+
   .animations-page .filter-shape {
     animation: none;
     filter: none;
     transform: none;
   }
+
+
+  /* CSS blend mode animation */
 
   .animations-page .blend-shape {
     animation: none;
@@ -1754,35 +1782,56 @@ footer a:hover {
     transform: translateY(35%);
   }
 
-  .svg-page #fan-blades {
+
+  /* Disable all SVG animations */
+
+  .svg-page .study-desk,
+  .svg-page .study-desk * {
     animation: none;
+    transition: none;
+  }
+
+
+  /* Keep the fan in its original position */
+
+  .svg-page #fan-blades {
     transform: none;
   }
+
+
+  /* Keep all three airflow paths visible */
 
   .svg-page #wind-one,
   .svg-page #wind-two,
   .svg-page #wind-three {
-    animation: none;
     opacity: 1;
     stroke-dashoffset: 0;
   }
 
+
+  /* Restore original notebook pages */
+
   .svg-page #notebook-page-one,
   .svg-page #notebook-page-two {
-    animation: none;
+    transform: none;
+    d: revert;
   }
+
+
+  /* Keep coffee steam visible */
 
   .svg-page #steam-one,
   .svg-page #steam-two {
-    animation: none;
     opacity: 1;
     transform: none;
   }
 
+
+  /* Restore original plant positions */
+
   .svg-page #plant-leaf-one,
   .svg-page #plant-leaf-two,
   .svg-page #plant-leaf-three {
-    animation: none;
     transform: none;
   }
 }
