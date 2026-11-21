@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SVG Animation | Karamdeep Singh</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="resume svg-page">
+    <!-- NAVIGATION -->
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="site-logo"> KS </a>
+
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Show navigation menu"
+        />
+
+        <label
+          for="nav-toggle"
+          class="nav-toggle-label"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+        </label>
+
+        <ul class="nav-links">
+          <li>
+            <a href="resume.html">Resume</a>
+          </li>
+
+          <li>
+            <a href="projects.html">Projects</a>
+          </li>
+
+          <li>
+            <button
+              type="button"
+              popovertarget="contact-popover"
+              class="btn nav-contact contact-btn"
+            >
+              Contact
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CONTACT POPOVER -->
+
+    <article id="contact-popover" popover>
+      <div class="contact-card">
+        <img
+          src="images/karam.jpg"
+          alt="Photo of Karamdeep Singh"
+          class="contact-photo"
+        />
+
+        <div class="contact-info">
+          <h2>Karamdeep Singh</h2>
+
+          <p class="contact-role">Digital Design + Development Student</p>
+
+          <p class="contact-bio">
+            I am a Digital Design and Development student. I enjoy creating
+            websites and learning new skills.
+          </p>
+
+          <p class="contact-email">
+            <a href="mailto:ksingh86@northislandcollege.ca">
+              ksingh86@northislandcollege.ca
+            </a>
+          </p>
+
+          <p class="contact-phone">
+            Phone:
+            <a href="tel:5794839126"> 5794839126 </a>
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="contact-close"
+          popovertarget="contact-popover"
+          popovertargetaction="hide"
+        >
+          Close
+        </button>
+      </div>
+    </article>
+
+    <!-- PAGE HEADER -->
+
+    <header class="page-header">
+      <div class="content-wrapper">
+        <h1>SVG Animation</h1>
+
+        <h2>A Breezy Study Desk</h2>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="content-wrapper">
+      <!-- PROJECT INTRODUCTION -->
+
+      <section class="resume-section">
+        <h2>About This Project</h2>
+
+        <p>
+          This project is based on a simple study desk with a table fan, books,
+          an open notebook, a coffee cup, and a small plant.
+        </p>
+
+        <p>
+          The idea is to show how a small desk fan creates movement in everyday
+          objects. The fan rotates, the notebook pages move, and the plant
+          leaves shake gently.
+        </p>
+      </section>
+
+      <!-- SVG ILLUSTRATION -->
+
+      <section class="resume-section svg-section">
+        <h2>The Study Desk</h2>
+
+        <figure class="svg-figure">
+          <svg
+            class="study-desk"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 800 500"
+            width="800"
+            height="500"
+            role="img"
+            aria-labelledby="desk-title desk-description"
+            style="max-inline-size: 100%; block-size: auto"
+          >
+            <title id="desk-title">A Breezy Study Desk</title>
+
+            <desc id="desk-description">
+              A study desk illustration that will include a fan, open notebook,
+              books, coffee cup, and a small plant.
+            </desc>
+
+            <rect
+              id="room-background"
+              x="0"
+              y="0"
+              width="800"
+              height="500"
+              rx="12"
+              fill="#F1F0E7"
+            />
+          </svg>
+
+          <figcaption>
+            A simple study desk illustration inspired by everyday student life.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ANIMATION DETAILS -->
+
+      <section class="resume-section">
+        <h2>Animation Techniques</h2>
+
+        <p>
+          This project uses SVG shapes and CSS animations to create movement.
+        </p>
+
+        <ul>
+          <li>Rotation for the table fan.</li>
+
+          <li>Movement for the airflow paths.</li>
+
+          <li>Gentle movement for the notebook pages.</li>
+
+          <li>Opacity changes for the coffee steam.</li>
+
+          <li>Small rotations for the plant leaves.</li>
+        </ul>
+      </section>
+
+      <!-- BACK BUTTON -->
+
+      <div class="svg-back">
+        <a href="projects.html" class="btn"> Back to Projects </a>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <p>© 2026 by Karamdeep Singh</p>
+
+      <ul class="socials">
+        <li>
+          <a href="#" aria-label="YouTube">
+            <img src="images/icon-logo-youtube.png" alt="YouTube" />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" aria-label="Portfolio">
+            <img src="images/icon-logo-ko-fi.png" alt="Portfolio" />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" aria-label="Medium">
+            <img src="images/icon-logo-medium.png" alt="Medium" />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" aria-label="Instagram">
+            <img src="images/icon-logo-instagram.png" alt="Instagram" />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" aria-label="LinkedIn">
+            <img src="images/icon-logo-linkedin.png" alt="LinkedIn" />
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://x.com/karam_sher_gill"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
+            <img src="images/icon-logo-twitter.png" alt="Twitter" />
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
