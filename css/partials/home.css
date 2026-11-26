@@ -1,0 +1,43 @@
+
+/* ========================================
+   Home Page
+======================================== */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vb;
+
+  background:
+    linear-gradient(
+      oklch(20% 0.02 150 / 0.12),
+      oklch(20% 0.02 150 / 0.25)
+    ),
+    url("../../images/karam.jpg")
+    no-repeat center / cover;
+}
+
+.home > .content-wrapper {
+  flex: 1 0 auto;
+  inline-size: 100%;
+  padding-block: var(--space-xl);
+  padding-inline: var(--space-lg);
+}
+
+.content-bg {
+  padding-block: clamp(1.25rem, 4vi, 2.5rem);
+  padding-inline: clamp(1.25rem, 4vi, 2.5rem);
+  background: var(--content-background);
+  border: 0.0625rem solid var(--neutral-3);
+  border-radius: var(--radius-card);
+  box-shadow: var(--card-shadow);
+}
+
+.content-bg h2 {
+  margin-block-start: var(--space-xs);
+  color: var(--accent-dark);
+}
+
+.content-bg p {
+  line-height: 1.75;
+}

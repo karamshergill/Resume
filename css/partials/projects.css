@@ -1,0 +1,153 @@
+
+/* ========================================
+   Projects Page
+======================================== */
+
+.project-item {
+  margin-block: 1.875rem;
+}
+
+.project-item img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  margin-block-end: 0.625rem;
+  object-fit: cover;
+  border-radius: var(--radius-medium);
+}
+
+
+/* Projects grid */
+
+.projects-page .project-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: var(--space-xl);
+  row-gap: 0;
+  margin-block-start: var(--space-xl);
+}
+
+
+/* Project cards */
+
+.projects-page .project-item {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  min-inline-size: 0;
+  margin-block: 0 var(--space-xl);
+  margin-inline: 0;
+  padding-block: var(--space-md);
+  padding-inline: var(--space-md);
+  background: var(--card-background);
+  border: 0.0625rem solid var(--neutral-2);
+  border-radius: var(--radius-card);
+  box-shadow: var(--card-shadow);
+
+  transition:
+    transform var(--card-transition),
+    box-shadow var(--card-transition),
+    border-color var(--card-transition);
+}
+
+.projects-page .project-item:hover {
+  transform: translateY(-0.1875rem);
+  border-color: var(--neutral-3);
+  box-shadow: var(--card-hover-shadow);
+}
+
+
+/* Project images */
+
+.projects-page .project-item > a:first-child {
+  display: block;
+  grid-row: 1;
+  min-inline-size: 0;
+  border-radius: var(--radius-medium);
+}
+
+.projects-page .project-item img {
+  display: block;
+  grid-row: 1;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 16 / 10;
+  margin-block: 0;
+  margin-inline: 0;
+  object-fit: cover;
+}
+
+
+/* Animation screenshots */
+
+.projects-page .project-item
+img[src$="svg-showcase.png"],
+.projects-page .project-item
+img[src$="animation-showcase.png"] {
+  object-fit: contain;
+  background: var(--neutral-1);
+}
+
+
+/* Project titles */
+
+.projects-page .project-item h3 {
+  grid-row: 2;
+  margin-block: var(--space-sm);
+  margin-inline: 0;
+  color: var(--accent-dark);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.projects-page .project-item h3 a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.projects-page .project-item h3 a:hover {
+  text-decoration: underline;
+}
+
+
+/* Project descriptions */
+
+.projects-page .project-item > p,
+.projects-page .project-description {
+  grid-row: 3;
+}
+
+.projects-page .project-item p {
+  margin-block: 0;
+  margin-inline: 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.projects-page .project-description {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+
+/* Project buttons */
+
+.projects-page .project-item .btn {
+  display: inline-block;
+  max-inline-size: 100%;
+  margin-block-start: var(--space-md);
+  white-space: normal;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+/* Subgrid fallback */
+
+@supports not (grid-template-rows: subgrid) {
+  .projects-page .project-item {
+    grid-row: auto;
+    grid-template-rows: auto auto 1fr;
+  }
+}

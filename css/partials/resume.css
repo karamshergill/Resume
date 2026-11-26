@@ -1,0 +1,117 @@
+
+/* ========================================
+   Resume Page
+======================================== */
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vb;
+}
+
+.resume main {
+  flex: 1 0 auto;
+}
+
+.resume .page-header {
+  background: var(--header-background);
+  border-block-end: 0.0625rem solid var(--neutral-3);
+}
+
+.resume .page-header::before {
+  content: "";
+  display: block;
+  block-size: 12.5rem;
+
+  background:
+    url("../../images/karam.jpg")
+    center / cover;
+}
+
+.resume .page-header .content-wrapper {
+  padding-block: clamp(1.5rem, 4vi, 2.5rem);
+}
+
+.resume .page-header h1 {
+  font-size: clamp(3rem, 6vi, 4.375rem);
+  line-height: 1.1;
+}
+
+.resume .page-header h2 {
+  margin-block-start: var(--space-xs);
+  color: var(--accent-dark);
+  font-size: clamp(1.5rem, 3vi, 2.25rem);
+}
+
+
+/* Resume sections */
+
+.resume-section {
+  margin-block-end: var(--section-spacing);
+}
+
+.resume-section > h2 {
+  padding-block-end: var(--space-xs);
+  border-block-end: 0.125rem solid var(--neutral-3);
+  color: var(--accent-dark);
+}
+
+.resume-section p {
+  overflow-wrap: anywhere;
+}
+
+.resume-section > p {
+  line-height: 1.75;
+}
+
+
+/* Resume download link */
+
+.download-link {
+  display: inline-block;
+  position: relative;
+  margin-block-start: var(--space-md);
+  margin-inline-start: var(--space-lg);
+  font-size: 0.9375rem;
+  max-inline-size: calc(100% - var(--space-lg));
+}
+
+
+/* Work experience and education */
+
+.work-item,
+.education-item {
+  margin-block: var(--space-xl);
+  padding-block: var(--space-lg);
+  padding-inline: var(--space-lg);
+  background: var(--card-background);
+  border: 0.0625rem solid var(--neutral-2);
+  border-inline-start: 0.1875rem solid var(--accent-green);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--card-shadow);
+}
+
+.work-details p,
+.education-item p {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+.work-details h3,
+.education-item h3 {
+  margin-block-end: var(--space-xs);
+  color: var(--accent-dark);
+}
+
+.work-details,
+.work-summary {
+  min-inline-size: 0;
+}
+
+.work-summary p:first-child {
+  margin-block-start: 0;
+}
+
+.work-summary p:last-child {
+  margin-block-end: 0;
+}

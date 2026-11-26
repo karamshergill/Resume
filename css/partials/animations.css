@@ -1,0 +1,157 @@
+
+/* ========================================
+   CSS Animation Showcase
+======================================== */
+
+.animations-page .page-header::before {
+  display: none;
+}
+
+
+/* Animation grid */
+
+.animations-page .animation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+  margin-block-start: var(--space-xl);
+}
+
+
+/* Animation cards */
+
+.animations-page .animation-card {
+  min-inline-size: 0;
+  padding-block: var(--space-lg);
+  padding-inline: var(--space-lg);
+  background: var(--card-background);
+  border: 0.0625rem solid var(--neutral-2);
+  border-radius: var(--radius-card);
+  box-shadow: var(--card-shadow);
+  overflow-wrap: anywhere;
+}
+
+.animations-page .animation-card h3 {
+  margin-block-end: var(--space-md);
+  color: var(--accent-dark);
+}
+
+.animations-page .animation-card p {
+  margin-block: 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.animations-page .animation-technique {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.animations-page .animation-back {
+  margin-block-start: var(--space-xxl);
+}
+
+
+/* Animation stage */
+
+.animations-page .animation-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--neutral-1);
+  border: 0.0625rem solid var(--neutral-2);
+  border-radius: var(--radius-large);
+}
+
+
+/* Clip-path animation */
+
+.animations-page .clip-shape,
+.animations-page .filter-shape {
+  inline-size: 55%;
+  aspect-ratio: 1 / 1;
+}
+
+.animations-page .clip-shape {
+  background: var(--accent-green);
+
+  animation:
+    morphClip
+    3.5s ease-in-out
+    infinite alternate;
+}
+
+
+/* Filter animation */
+
+.animations-page .filter-stage,
+.animations-page .blend-stage {
+  background: radial-gradient(
+    circle,
+    var(--neutral-1),
+    var(--neutral-2)
+  );
+}
+
+.animations-page .filter-shape {
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 35% 30%,
+    var(--accent-beige),
+    var(--accent-green) 55%,
+    var(--neutral-8)
+  );
+
+  box-shadow: 0 0 1rem var(--shadow-light);
+
+  animation:
+    filterPulse
+    var(--filter-animation-duration)
+    ease-in-out infinite alternate;
+}
+
+
+/* Blend mode animation */
+
+.animations-page .blend-shape {
+  position: absolute;
+  inline-size: 38%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+  will-change: transform;
+}
+
+.animations-page .blend-one {
+  background: var(--accent-green);
+
+  animation:
+    blendMoveOne
+    var(--blend-animation-duration)
+    ease-in-out infinite alternate;
+}
+
+.animations-page .blend-two {
+  background: var(--accent-beige);
+
+  animation:
+    blendMoveTwo
+    var(--blend-animation-duration)
+    ease-in-out infinite alternate;
+}
+
+.animations-page .blend-three {
+  background: var(--neutral-5);
+
+  animation:
+    blendMoveThree
+    var(--blend-animation-duration)
+    ease-in-out infinite alternate;
+}
