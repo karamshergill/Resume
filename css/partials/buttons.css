@@ -1,0 +1,48 @@
+
+/* ========================================
+   Buttons
+======================================== */
+
+.btn {
+  display: inline-block;
+  max-inline-size: 100%;
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-lg);
+  background: var(--accent-dark);
+  color: var(--card-background);
+  border: 0;
+  border-radius: var(--radius-medium);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: normal;
+  cursor: pointer;
+
+  transition:
+    background-color var(--button-transition),
+    color var(--button-transition),
+    transform var(--button-transition),
+    box-shadow var(--button-transition);
+}
+
+.btn:hover {
+  background: var(--neutral-8);
+  color: var(--card-background);
+  transform: translateY(-0.1875rem);
+  box-shadow: var(--button-shadow);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn:focus-visible {
+  outline: 0.1875rem solid var(--accent-dark);
+  outline-offset: 0.1875rem;
+}

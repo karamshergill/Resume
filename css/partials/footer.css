@@ -1,0 +1,76 @@
+
+/* ========================================
+   Footer
+======================================== */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-block: var(--space-lg);
+  padding-inline: var(--space-lg);
+  background: var(--neutral-9);
+  color: var(--neutral-3);
+  font-size: 0.875rem;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+footer p {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+footer a {
+  color: var(--accent-beige);
+}
+
+footer a:hover {
+  color: var(--card-background);
+}
+
+footer a:focus-visible {
+  outline: 0.1875rem solid var(--accent-beige);
+  outline-offset: 0.25rem;
+  border-radius: var(--radius-small);
+}
+
+/* Social media icons */
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-block: var(--space-xs);
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.socials li {
+  display: inline-block;
+}
+
+.socials a {
+  display: block;
+}
+
+.socials img {
+  display: block;
+  inline-size: 2rem;
+  block-size: 2rem;
+
+  transition:
+    opacity var(--button-transition),
+    transform var(--button-transition);
+}
+
+.socials img:hover {
+  opacity: 0.7;
+  transform: translateY(-0.125rem);
+}
