@@ -1,0 +1,148 @@
+
+/* ========================================
+   CSS Animation Keyframes
+======================================== */
+
+
+/* Clip-path animation */
+
+@keyframes morphClip {
+  0% {
+    clip-path: polygon(
+      50% 0%,
+      50% 0%,
+      100% 100%,
+      0% 100%
+    );
+
+    transform: rotate(0deg);
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%
+    );
+
+    transform: rotate(45deg);
+  }
+
+  100% {
+    clip-path: polygon(
+      50% 0%,
+      100% 50%,
+      50% 100%,
+      0% 50%
+    );
+
+    transform: rotate(0deg);
+  }
+}
+
+
+/* Filter animation */
+
+@keyframes filterPulse {
+  0% {
+    filter:
+      hue-rotate(0deg)
+      blur(0rem)
+      brightness(1)
+      saturate(1);
+
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  25% {
+    filter:
+      hue-rotate(70deg)
+      blur(0.125rem)
+      brightness(1.25)
+      saturate(1.4);
+
+    transform: scale(1) rotate(90deg);
+  }
+
+  50% {
+    filter:
+      hue-rotate(150deg)
+      blur(0.25rem)
+      brightness(1.5)
+      saturate(1.7);
+
+    transform: scale(1.12) rotate(180deg);
+  }
+
+  75% {
+    filter:
+      hue-rotate(240deg)
+      blur(0.125rem)
+      brightness(1.2)
+      saturate(1.5);
+
+    transform: scale(1) rotate(270deg);
+  }
+
+  100% {
+    filter:
+      hue-rotate(360deg)
+      blur(0rem)
+      brightness(1)
+      saturate(1);
+
+    transform: scale(0.8) rotate(360deg);
+  }
+}
+
+
+/* First blend shape */
+
+@keyframes blendMoveOne {
+  0% {
+    transform: translate(-45%, -10%) scale(0.9);
+  }
+
+  50% {
+    transform: translate(10%, 10%) scale(1.15);
+  }
+
+  100% {
+    transform: translate(45%, -15%) scale(0.9);
+  }
+}
+
+
+/* Second blend shape */
+
+@keyframes blendMoveTwo {
+  0% {
+    transform: translate(45%, -10%) scale(0.9);
+  }
+
+  50% {
+    transform: translate(-10%, -15%) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-45%, 15%) scale(0.9);
+  }
+}
+
+
+/* Third blend shape */
+
+@keyframes blendMoveThree {
+  0% {
+    transform: translate(0%, 45%) scale(0.85);
+  }
+
+  50% {
+    transform: translate(0%, -35%) scale(1.1);
+  }
+
+  100% {
+    transform: translate(0%, 35%) scale(0.85);
+  }
+}

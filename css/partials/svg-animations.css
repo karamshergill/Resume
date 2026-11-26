@@ -1,0 +1,266 @@
+
+/* ========================================
+   SVG Animations
+======================================== */
+
+
+/* Fan rotation */
+
+.svg-page #fan-blades {
+  transform-box: view-box;
+  transform-origin: 23.125% 31%;
+
+  animation:
+    spinFan
+    var(--fan-animation-duration)
+    linear
+    var(--svg-animation-delay)
+    infinite;
+}
+
+
+/* Airflow paths */
+
+.svg-page #wind-one,
+.svg-page #wind-two,
+.svg-page #wind-three {
+  opacity: 0;
+
+  animation:
+    moveAirflow
+    var(--airflow-duration)
+    linear infinite;
+}
+
+.svg-page #wind-one {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--airflow-delay)
+  );
+}
+
+.svg-page #wind-two {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--airflow-delay) +
+    var(--airflow-stagger)
+  );
+}
+
+.svg-page #wind-three {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--airflow-delay) +
+    var(--airflow-stagger) * 2
+  );
+}
+
+
+/* Notebook pages */
+
+.svg-page #notebook-page-one,
+.svg-page #notebook-page-two {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.svg-page #notebook-page-one {
+  animation-name: flutterPageOne;
+  animation-duration: var(--page-one-duration);
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--notebook-delay)
+  );
+}
+
+.svg-page #notebook-page-two {
+  animation-name: flutterPageTwo;
+  animation-duration: var(--page-two-duration);
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--notebook-delay) +
+    var(--notebook-stagger)
+  );
+}
+
+
+/* Coffee steam */
+
+.svg-page #steam-one,
+.svg-page #steam-two {
+  opacity: 0;
+
+  animation:
+    riseSteam
+    var(--steam-duration)
+    ease-out infinite;
+}
+
+.svg-page #steam-one {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--steam-delay)
+  );
+}
+
+.svg-page #steam-two {
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--steam-delay) +
+    var(--steam-stagger)
+  );
+}
+
+
+/* Plant leaves */
+
+.svg-page #plant-leaf-one,
+.svg-page #plant-leaf-two,
+.svg-page #plant-leaf-three {
+  transform-box: view-box;
+  transform-origin: 85.75% 62%;
+
+  animation-name: swayLeaves;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.svg-page #plant-leaf-one {
+  animation-duration: var(--leaf-one-duration);
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--plant-delay)
+  );
+}
+
+.svg-page #plant-leaf-two {
+  animation-duration: var(--leaf-two-duration);
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--plant-delay) +
+    var(--plant-stagger)
+  );
+}
+
+.svg-page #plant-leaf-three {
+  animation-duration: var(--leaf-three-duration);
+
+  animation-delay: calc(
+    var(--svg-animation-delay) +
+    var(--plant-delay) +
+    var(--plant-stagger) * 2
+  );
+}
+
+
+/* ========================================
+   SVG Animation Keyframes
+======================================== */
+
+
+/* Fan rotation */
+
+@keyframes spinFan {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Airflow movement */
+
+@keyframes moveAirflow {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -40;
+    opacity: 0.3;
+  }
+}
+
+
+/* First notebook page */
+
+@keyframes flutterPageOne {
+  from {
+    d: path(
+      "M410 346 L410 290 Q470 242 505 280 L505 320 Z"
+    );
+  }
+
+  to {
+    d: path(
+      "M410 346 L410 290 Q470 220 500 260 L500 310 Z"
+    );
+  }
+}
+
+
+/* Second notebook page */
+
+@keyframes flutterPageTwo {
+  from {
+    d: path(
+      "M410 346 L410 290 Q445 215 485 240 Q470 284 505 320 Z"
+    );
+  }
+
+  to {
+    d: path(
+      "M410 346 L410 290 Q440 185 480 215 Q455 265 498 305 Z"
+    );
+  }
+}
+
+
+/* Coffee steam movement */
+
+@keyframes riseSteam {
+  0% {
+    opacity: 0;
+    transform: translate(0, 6px);
+  }
+
+  35% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(8px, -24px);
+  }
+}
+
+
+/* Plant leaf movement */
+
+@keyframes swayLeaves {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(6deg);
+  }
+}

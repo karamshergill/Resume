@@ -3,10 +3,12 @@
    01. CSS Imports
 ======================================== */
 
+
 /* Foundation */
 
 @import url("./partials/variables.css");
 @import url("./partials/global.css");
+
 
 /* Shared components */
 
@@ -14,6 +16,7 @@
 @import url("./partials/navigation.css");
 @import url("./partials/contact.css");
 @import url("./partials/footer.css");
+
 
 /* Page styles */
 
@@ -24,408 +27,16 @@
 @import url("./partials/svg.css");
 
 
-/* ========================================
-   02. CSS Animation Keyframes
-======================================== */
+/* Animation styles */
 
-/* Clip-path keyframes */
-
-@keyframes morphClip {
-  0% {
-    clip-path: polygon(
-      50% 0%,
-      50% 0%,
-      100% 100%,
-      0% 100%
-    );
-
-    transform: rotate(0deg);
-  }
-
-  50% {
-    clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      0% 100%
-    );
-
-    transform: rotate(45deg);
-  }
-
-  100% {
-    clip-path: polygon(
-      50% 0%,
-      100% 50%,
-      50% 100%,
-      0% 50%
-    );
-
-    transform: rotate(0deg);
-  }
-}
-
-
-/* Filter keyframes */
-
-@keyframes filterPulse {
-  0% {
-    filter:
-      hue-rotate(0deg)
-      blur(0rem)
-      brightness(1)
-      saturate(1);
-
-    transform: scale(0.8) rotate(0deg);
-  }
-
-  25% {
-    filter:
-      hue-rotate(70deg)
-      blur(0.125rem)
-      brightness(1.25)
-      saturate(1.4);
-
-    transform: scale(1) rotate(90deg);
-  }
-
-  50% {
-    filter:
-      hue-rotate(150deg)
-      blur(0.25rem)
-      brightness(1.5)
-      saturate(1.7);
-
-    transform: scale(1.12) rotate(180deg);
-  }
-
-  75% {
-    filter:
-      hue-rotate(240deg)
-      blur(0.125rem)
-      brightness(1.2)
-      saturate(1.5);
-
-    transform: scale(1) rotate(270deg);
-  }
-
-  100% {
-    filter:
-      hue-rotate(360deg)
-      blur(0rem)
-      brightness(1)
-      saturate(1);
-
-    transform: scale(0.8) rotate(360deg);
-  }
-}
-
-
-/* Blend mode keyframes */
-
-@keyframes blendMoveOne {
-  0% {
-    transform: translate(-45%, -10%) scale(0.9);
-  }
-
-  50% {
-    transform: translate(10%, 10%) scale(1.15);
-  }
-
-  100% {
-    transform: translate(45%, -15%) scale(0.9);
-  }
-}
-
-@keyframes blendMoveTwo {
-  0% {
-    transform: translate(45%, -10%) scale(0.9);
-  }
-
-  50% {
-    transform: translate(-10%, -15%) scale(1.1);
-  }
-
-  100% {
-    transform: translate(-45%, 15%) scale(0.9);
-  }
-}
-
-@keyframes blendMoveThree {
-  0% {
-    transform: translate(0%, 45%) scale(0.85);
-  }
-
-  50% {
-    transform: translate(0%, -35%) scale(1.1);
-  }
-
-  100% {
-    transform: translate(0%, 35%) scale(0.85);
-  }
-}
+@import url("./partials/keyframes.css");
+@import url("./partials/svg-animations.css");
 
 
 /* ========================================
-   03. SVG Animations
+   02. Responsive Styles
 ======================================== */
 
-/* Fan rotation */
-
-.svg-page #fan-blades {
-  transform-box: view-box;
-  transform-origin: 23.125% 31%;
-
-  animation:
-    spinFan
-    var(--fan-animation-duration)
-    linear
-    var(--svg-animation-delay)
-    infinite;
-}
-
-
-/* Airflow paths */
-
-.svg-page #wind-one,
-.svg-page #wind-two,
-.svg-page #wind-three {
-  opacity: 0;
-
-  animation:
-    moveAirflow
-    var(--airflow-duration)
-    linear infinite;
-}
-
-.svg-page #wind-one {
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--airflow-delay)
-  );
-}
-
-.svg-page #wind-two {
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--airflow-delay) +
-    var(--airflow-stagger)
-  );
-}
-
-.svg-page #wind-three {
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--airflow-delay) +
-    var(--airflow-stagger) * 2
-  );
-}
-
-
-/* Notebook pages */
-
-.svg-page #notebook-page-one,
-.svg-page #notebook-page-two {
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-.svg-page #notebook-page-one {
-  animation-name: flutterPageOne;
-  animation-duration: var(--page-one-duration);
-
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--notebook-delay)
-  );
-}
-
-.svg-page #notebook-page-two {
-  animation-name: flutterPageTwo;
-  animation-duration: var(--page-two-duration);
-
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--notebook-delay) +
-    var(--notebook-stagger)
-  );
-}
-
-
-/* Coffee steam */
-
-.svg-page #steam-one,
-.svg-page #steam-two {
-  opacity: 0;
-
-  animation:
-    riseSteam
-    var(--steam-duration)
-    ease-out infinite;
-}
-
-.svg-page #steam-one {
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--steam-delay)
-  );
-}
-
-.svg-page #steam-two {
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--steam-delay) +
-    var(--steam-stagger)
-  );
-}
-
-
-/* Plant leaves */
-
-.svg-page #plant-leaf-one,
-.svg-page #plant-leaf-two,
-.svg-page #plant-leaf-three {
-  transform-box: view-box;
-  transform-origin: 85.75% 62%;
-  animation-name: swayLeaves;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-.svg-page #plant-leaf-one {
-  animation-duration: var(--leaf-one-duration);
-
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--plant-delay)
-  );
-}
-
-.svg-page #plant-leaf-two {
-  animation-duration: var(--leaf-two-duration);
-
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--plant-delay) +
-    var(--plant-stagger)
-  );
-}
-
-.svg-page #plant-leaf-three {
-  animation-duration: var(--leaf-three-duration);
-
-  animation-delay: calc(
-    var(--svg-animation-delay) +
-    var(--plant-delay) +
-    var(--plant-stagger) * 2
-  );
-}
-
-
-/* Fan keyframes */
-
-@keyframes spinFan {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-/* Airflow keyframes */
-
-@keyframes moveAirflow {
-  0% {
-    stroke-dashoffset: 0;
-    opacity: 0.3;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    stroke-dashoffset: -40;
-    opacity: 0.3;
-  }
-}
-
-
-/* Notebook keyframes */
-
-@keyframes flutterPageOne {
-  from {
-    d: path(
-      "M410 346 L410 290 Q470 242 505 280 L505 320 Z"
-    );
-  }
-
-  to {
-    d: path(
-      "M410 346 L410 290 Q470 220 500 260 L500 310 Z"
-    );
-  }
-}
-
-@keyframes flutterPageTwo {
-  from {
-    d: path(
-      "M410 346 L410 290 Q445 215 485 240 Q470 284 505 320 Z"
-    );
-  }
-
-  to {
-    d: path(
-      "M410 346 L410 290 Q440 185 480 215 Q455 265 498 305 Z"
-    );
-  }
-}
-
-
-/* Steam keyframes */
-
-@keyframes riseSteam {
-  0% {
-    opacity: 0;
-    transform: translate(0, 6px);
-  }
-
-  35% {
-    opacity: 0.9;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(8px, -24px);
-  }
-}
-
-
-/* Plant keyframes */
-
-@keyframes swayLeaves {
-  0% {
-    transform: rotate(-3deg);
-  }
-
-  50% {
-    transform: rotate(2deg);
-  }
-
-  100% {
-    transform: rotate(6deg);
-  }
-}
-
-
-/* ========================================
-   04. Responsive Styles
-======================================== */
 
 /* Small tablets */
 
@@ -628,7 +239,7 @@
 
 
 /* ========================================
-   05. Reduced Motion
+   03. Reduced Motion
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
