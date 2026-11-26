@@ -1,0 +1,159 @@
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* Disable transitions */
+
+  .btn,
+  .contact-close,
+  .socials img,
+  .site-logo,
+  .nav-links a,
+  .nav-links a::after,
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after,
+  .projects-page .project-item {
+    transition: none;
+  }
+
+
+  /* Disable smooth scrolling */
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  /* Disable logo animation */
+
+  .site-logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+
+  /* Disable hover movement */
+
+  .btn:hover,
+  .contact-close:hover,
+  .socials img:hover,
+  .site-logo:hover,
+  .nav-links a:hover,
+  .projects-page .project-item:hover {
+    transform: none;
+  }
+
+
+  /* CSS showcase animations */
+
+  .animations-page .clip-shape,
+  .animations-page .filter-shape,
+  .animations-page .blend-shape,
+  .animations-page .blend-one,
+  .animations-page .blend-two,
+  .animations-page .blend-three {
+    animation: none;
+  }
+
+
+  /* Static clip-path shape */
+
+  .animations-page .clip-shape {
+    clip-path: polygon(
+      50% 0%,
+      100% 50%,
+      50% 100%,
+      0% 50%
+    );
+
+    transform: none;
+  }
+
+
+  /* Static filter shape */
+
+  .animations-page .filter-shape {
+    filter: none;
+    transform: none;
+  }
+
+
+  /* Static blend mode shapes */
+
+  .animations-page .blend-shape {
+    will-change: auto;
+  }
+
+  .animations-page .blend-one {
+    transform: translate(-35%, -10%);
+  }
+
+  .animations-page .blend-two {
+    transform: translate(35%, -10%);
+  }
+
+  .animations-page .blend-three {
+    transform: translateY(35%);
+  }
+
+
+  /* Disable SVG transitions */
+
+  .svg-page .study-desk,
+  .svg-page .study-desk * {
+    animation: none;
+    transition: none;
+  }
+
+
+  /* Disable individual SVG animations */
+
+  .svg-page #fan-blades,
+  .svg-page #wind-one,
+  .svg-page #wind-two,
+  .svg-page #wind-three,
+  .svg-page #notebook-page-one,
+  .svg-page #notebook-page-two,
+  .svg-page #steam-one,
+  .svg-page #steam-two,
+  .svg-page #plant-leaf-one,
+  .svg-page #plant-leaf-two,
+  .svg-page #plant-leaf-three {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
+
+
+  /* Keep airflow and steam visible */
+
+  .svg-page #wind-one,
+  .svg-page #wind-two,
+  .svg-page #wind-three,
+  .svg-page #steam-one,
+  .svg-page #steam-two {
+    opacity: 1;
+  }
+
+
+  /* Reset airflow paths */
+
+  .svg-page #wind-one,
+  .svg-page #wind-two,
+  .svg-page #wind-three {
+    stroke-dashoffset: 0;
+  }
+
+
+  /* Restore original notebook paths */
+
+  .svg-page #notebook-page-one,
+  .svg-page #notebook-page-two {
+    d: revert;
+  }
+}

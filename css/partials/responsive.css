@@ -1,0 +1,204 @@
+
+/* ========================================
+   Responsive Styles
+======================================== */
+
+
+/* Small tablets */
+
+@media screen and (min-width: 31.25rem) {
+  .home > .content-wrapper {
+    padding-block: 1.875rem;
+    padding-inline: 1.875rem;
+  }
+
+  .resume .page-header::before {
+    block-size: 20rem;
+  }
+
+  .project-item img {
+    inline-size: 18.75rem;
+  }
+
+  .projects-page .project-item img {
+    inline-size: 100%;
+  }
+}
+
+
+/* Two-column projects layout */
+
+@media screen and (min-width: 37.5rem) {
+  .projects-page .project-wrapper {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .svg-page .svg-back .btn {
+    inline-size: auto;
+  }
+}
+
+
+/* Other project layouts */
+
+@media screen and (min-width: 40.625rem) {
+  .project-wrapper:not(.projects-page .project-wrapper) {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-lg);
+  }
+
+  .project-wrapper:not(.projects-page .project-wrapper)
+  .project-item img {
+    inline-size: 100%;
+  }
+}
+
+
+/* Desktop navigation and animation layouts */
+
+@media screen and (min-width: 48rem) {
+  .nav-inner {
+    flex-wrap: nowrap;
+    gap: var(--space-xxl);
+    padding-inline: 1.875rem;
+  }
+
+  .site-logo {
+    flex-shrink: 0;
+  }
+
+  .nav-toggle,
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2.5rem;
+    margin-block: 0;
+    margin-inline: auto 0;
+    padding-block: 0;
+    padding-inline: 0;
+  }
+
+  .nav-links a {
+    padding-block: 0.3125rem;
+  }
+
+  .animations-page .animation-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .svg-page main .resume-section ul {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .content-wrapper {
+    padding-inline: var(--space-xxl);
+  }
+}
+
+
+/* Work experience and footer layout */
+
+@media screen and (min-width: 53.75rem) {
+  .work-item {
+    display: grid;
+
+    grid-template-columns:
+      16rem minmax(0, 1fr);
+
+    column-gap: var(--space-xl);
+  }
+
+  footer {
+    flex-direction: row;
+    align-items: center;
+    text-align: start;
+  }
+
+  .socials {
+    justify-content: flex-end;
+    margin-block: 0;
+  }
+}
+
+
+/* Three-column projects layout */
+
+@media screen and (min-width: 56.25rem) {
+  .projects-page .content-wrapper {
+    max-inline-size: var(--wide-content-max-size);
+  }
+
+  .projects-page .project-wrapper {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .resume .page-header::before {
+    block-size: 23.4375rem;
+  }
+}
+
+
+/* Small mobile screen adjustments */
+
+@media screen and (max-width: 25rem) {
+  .content-wrapper {
+    padding-inline: var(--space-md);
+  }
+
+  .home > .content-wrapper {
+    padding-inline: var(--space-md);
+  }
+
+  .resume .page-header h1,
+  .svg-page .page-header h1,
+  .content-bg h1 {
+    font-size: 2.75rem;
+  }
+
+  .resume .page-header h2,
+  .svg-page .page-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .projects-page .project-item,
+  .animations-page .animation-card {
+    padding-block: var(--space-sm);
+    padding-inline: var(--space-sm);
+  }
+
+  .projects-page .project-item .btn,
+  .animations-page .animation-back .btn,
+  .svg-page .svg-back .btn {
+    inline-size: 100%;
+  }
+
+  .work-item,
+  .education-item {
+    padding-block: var(--space-md);
+    padding-inline: var(--space-md);
+  }
+
+  .socials {
+    gap: var(--space-xs);
+  }
+
+  .socials img {
+    inline-size: 1.75rem;
+    block-size: 1.75rem;
+  }
+}
