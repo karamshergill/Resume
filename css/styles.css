@@ -1,16 +1,19 @@
 
 /* ========================================
    Portfolio Stylesheet
+   Assignment 4A - CSS Refactoring
 ======================================== */
 
 
-/* Foundation */
+/* 01. Foundation
+   Shared variables and global styles */
 
 @import url("./partials/variables.css");
 @import url("./partials/global.css");
 
 
-/* Shared components */
+/* 02. Shared Components
+   Reusable elements across the website */
 
 @import url("./partials/buttons.css");
 @import url("./partials/navigation.css");
@@ -18,7 +21,8 @@
 @import url("./partials/footer.css");
 
 
-/* Page styles */
+/* 03. Page Styles
+   Individual portfolio page layouts */
 
 @import url("./partials/home.css");
 @import url("./partials/resume.css");
@@ -27,17 +31,20 @@
 @import url("./partials/svg.css");
 
 
-/* Animation styles */
+/* 04. Animations
+   CSS keyframes and SVG animations */
 
 @import url("./partials/keyframes.css");
 @import url("./partials/svg-animations.css");
 
 
-/* Responsive layout */
+/* 05. Responsive Layout
+   Screen size adjustments */
 
 @import url("./partials/responsive.css");
 
 
-/* Accessibility */
+/* 06. Accessibility
+   Reduced motion preferences */
 
 @import url("./partials/reduced-motion.css");
