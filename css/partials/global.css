@@ -1,0 +1,110 @@
+
+/* ========================================
+   Global Styles
+======================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  min-block-size: 100%;
+}
+
+body {
+  margin-block: 0;
+  margin-inline: 0;
+
+  background: var(--neutral-1);
+  color: var(--neutral-9);
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  margin-block: 0;
+  margin-inline: 0;
+
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vi, 4.375rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vi, 2.5rem);
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--accent-dark);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--neutral-8);
+  text-decoration: none;
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+main {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+main img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.content-wrapper {
+  inline-size: 100%;
+  max-inline-size: var(--content-max-size);
+  min-inline-size: 0;
+
+  margin-inline: auto;
+
+  padding-block: clamp(1.25rem, 3vi, 2rem);
+  padding-inline: var(--space-lg);
+}
+
+.content-bg,
+.resume-section,
+.project-wrapper,
+.project-item,
+.animation-card,
+.svg-figure {
+  min-inline-size: 0;
+}
+
+main a:focus-visible,
+.download-link:focus-visible {
+  outline: 0.1875rem solid var(--accent-dark);
+  outline-offset: 0.25rem;
+
+  border-radius: var(--radius-small);
+}
